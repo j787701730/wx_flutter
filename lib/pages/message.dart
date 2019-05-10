@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class Message extends StatefulWidget {
   @override
@@ -30,8 +31,19 @@ class _MessageState extends State<Message> {
     );
   }
 
+  List list = [
+    {'pic': 'images/li.jpg', 'name': '李'},
+    {'pic': 'images/wu.jpg', 'name': '吴'},
+    {'pic': 'images/chen.jpg', 'name': '陈'},
+    {'pic': 'images/pan.jpg', 'name': '潘'},
+    {'pic': 'images/yu.jpg', 'name': '余'},
+  ];
+
+  _showSnackBar(action) {}
+
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.instance = ScreenUtil(width: 640, height: 1136)..init(context);
     return Scaffold(
       appBar: AppBar(
         title: Text('微信'),
@@ -67,7 +79,78 @@ class _MessageState extends State<Message> {
         ],
       ),
       body: ListView(
-        children: <Widget>[Text('微信')],
+        children: list.map<Widget>((item) {
+          return Slidable(
+            delegate: new SlidableDrawerDelegate(),
+            actionExtentRatio: 0.25,
+            child: new Container(
+              decoration: BoxDecoration(
+                border: Border(bottom: BorderSide(color: Color(0xFFD6D6D6), width: 1)),
+                color: Colors.white,
+              ),
+              child: new ListTile(
+//                leading: new CircleAvatar(
+//                  backgroundColor: Colors.indigoAccent,
+//                  child: new Text('3'),
+//                  foregroundColor: Colors.white,
+//                ),
+                contentPadding: EdgeInsets.only(
+                    left: ScreenUtil.getInstance().setWidth(20), right: ScreenUtil.getInstance().setWidth(20)),
+                leading: Image.asset(item['pic']),
+                title: Container(
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Container(
+                          child: new Text(
+                            item['name'],
+                            style: TextStyle(color: Colors.black, fontSize: ScreenUtil.getInstance().setSp(30.0)),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: ScreenUtil.getInstance().setWidth(26 / 2 * 5),
+                        child: Text(
+                          '17:50',
+                          style: TextStyle(color: Color(0xFFB2B2B2), fontSize: ScreenUtil.getInstance().setSp(24.0)),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                subtitle: new Text('${item['name']}是个天才'),
+              ),
+            ),
+//            actions: <Widget>[
+//              new IconSlideAction(
+//                caption: 'Archive',
+//                color: Colors.blue,
+//                icon: Icons.archive,
+//                onTap: () => _showSnackBar('Archive'),
+//              ),
+//              new IconSlideAction(
+//                caption: 'Share',
+//                color: Colors.indigo,
+//                icon: Icons.share,
+//                onTap: () => _showSnackBar('Share'),
+//              ),
+//            ],
+            secondaryActions: <Widget>[
+              new IconSlideAction(
+                caption: '标记已读',
+                color: Colors.black45,
+                icon: Icons.more_horiz,
+                onTap: () => _showSnackBar('More'),
+              ),
+              new IconSlideAction(
+                caption: '删除',
+                color: Colors.red,
+                icon: Icons.delete,
+                onTap: () => _showSnackBar('Delete'),
+              ),
+            ],
+          );
+        }).toList(),
       ),
     );
   }
