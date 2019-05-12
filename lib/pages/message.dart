@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:fluro/fluro.dart';
+import '../routes.dart';
+//import 'message_detail.dart';
 
 class Message extends StatefulWidget {
   @override
@@ -94,8 +97,7 @@ class _MessageState extends State<Message> {
 //                  child: new Text('3'),
 //                  foregroundColor: Colors.white,
 //                ),
-                contentPadding: EdgeInsets.only(
-                    left: ScreenUtil.getInstance().setWidth(20), right: ScreenUtil.getInstance().setWidth(20)),
+                contentPadding: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(20), right: ScreenUtil.getInstance().setWidth(20)),
                 leading: Image.asset(item['pic']),
                 title: Container(
                   child: Row(
@@ -119,6 +121,13 @@ class _MessageState extends State<Message> {
                   ),
                 ),
                 subtitle: new Text('${item['name']}是个天才'),
+                onTap: () {
+                  Routes.router.navigateTo(context, 'messageDetail',transition: TransitionType.inFromRight);
+//                  Navigator.push(
+//                    context,
+//                    new MaterialPageRoute(builder: (context) => new MessageDetail()),
+//                  );
+                },
               ),
             ),
 //            actions: <Widget>[

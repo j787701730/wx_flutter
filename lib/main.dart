@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 import 'package:wx_flutter/routes.dart';
+import 'splashPage.dart';
 
 void main() {
   final router = new Router();
@@ -14,5 +15,6 @@ void main() {
           scaffoldBackgroundColor: Color(0xFFebebeb),
           cardColor: Color(0xff393a3f),
           platform: TargetPlatform.iOS),
+      home: SplashPage(),
       onGenerateRoute: Routes.router.generator));
 }
