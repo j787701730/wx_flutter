@@ -108,6 +108,7 @@ class _ChatDetailState extends State<ChatDetail> {
                     ),
                   )),
                   Container(
+                    padding: EdgeInsets.only(right: ScreenUtil.getInstance().setWidth(20.0)),
                     child: Icon(
                       Icons.keyboard_arrow_right,
                       color: Color(0xffC7C7CC),
@@ -135,6 +136,7 @@ class _ChatDetailState extends State<ChatDetail> {
                     ),
                   )),
                   Container(
+                    padding: EdgeInsets.only(right: ScreenUtil.getInstance().setWidth(20.0)),
                     child: Icon(
                       Icons.keyboard_arrow_right,
                       color: Color(0xffC7C7CC),
@@ -162,9 +164,8 @@ class _ChatDetailState extends State<ChatDetail> {
                     ),
                   )),
                   Container(
-                    child: Container(
-                      child: CupertinoSwitch(value: isTop, onChanged: topChange),
-                    ),
+                    padding: EdgeInsets.only(right: ScreenUtil.getInstance().setWidth(30.0)),
+                    child: CupertinoSwitch(value: isTop, onChanged: topChange),
                   )
                 ],
               ),
@@ -187,6 +188,7 @@ class _ChatDetailState extends State<ChatDetail> {
                     ),
                   )),
                   Container(
+                    padding: EdgeInsets.only(right: ScreenUtil.getInstance().setWidth(30.0)),
                     child: CupertinoSwitch(value: isMsg, onChanged: msgChange),
                   )
                 ],
@@ -210,6 +212,7 @@ class _ChatDetailState extends State<ChatDetail> {
                     ),
                   )),
                   Container(
+                    padding: EdgeInsets.only(right: ScreenUtil.getInstance().setWidth(20.0)),
                     child: Icon(
                       Icons.keyboard_arrow_right,
                       color: Color(0xffC7C7CC),
@@ -256,6 +259,7 @@ class _ChatDetailState extends State<ChatDetail> {
                     ),
                   )),
                   Container(
+                    padding: EdgeInsets.only(right: ScreenUtil.getInstance().setWidth(20.0)),
                     child: Icon(
                       Icons.keyboard_arrow_right,
                       color: Color(0xffC7C7CC),
