@@ -17,7 +17,7 @@ class Routes {
   static void configureRoutes(Router router) {
 //    router.define(home, handler: Handler(handlerFunc: (context, params) => SplashPage()));
     router.define(index, handler: Handler(handlerFunc: (context, params) => Index()));
-    router.define(messageDetail, handler: Handler(handlerFunc: (context, params) => MessageDetail()));
+//    router.define(messageDetail, handler: Handler(handlerFunc: (context, params) => MessageDetail()));
     router.define(goodsSearch, handler: Handler(handlerFunc: (context, params) {
       var data = params['data']?.first; //取出传参
 //      return GoodsSearch(data);

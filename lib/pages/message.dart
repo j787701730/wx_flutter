@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:fluro/fluro.dart';
-import '../routes.dart';
-//import 'message_detail.dart';
+
+//import 'package:fluro/fluro.dart';
+//import '../routes.dart';
+import 'message_detail.dart';
 
 class Message extends StatefulWidget {
   @override
@@ -35,6 +36,11 @@ class _MessageState extends State<Message> {
   }
 
   List list = [
+    {'pic': 'images/li.jpg', 'name': '李'},
+    {'pic': 'images/wu.jpg', 'name': '吴'},
+    {'pic': 'images/chen.jpg', 'name': '陈'},
+    {'pic': 'images/pan.jpg', 'name': '潘'},
+    {'pic': 'images/yu.jpg', 'name': '余'},
     {'pic': 'images/li.jpg', 'name': '李'},
     {'pic': 'images/wu.jpg', 'name': '吴'},
     {'pic': 'images/chen.jpg', 'name': '陈'},
@@ -122,11 +128,11 @@ class _MessageState extends State<Message> {
                 ),
                 subtitle: new Text('${item['name']}是个天才'),
                 onTap: () {
-                  Routes.router.navigateTo(context, 'messageDetail',transition: TransitionType.inFromRight);
-//                  Navigator.push(
-//                    context,
-//                    new MaterialPageRoute(builder: (context) => new MessageDetail()),
-//                  );
+//                  Routes.router.navigateTo(context, 'messageDetail',transition: TransitionType.inFromRight);
+                  Navigator.push(
+                    context,
+                    new MaterialPageRoute(builder: (context) => new MessageDetail({'name': item['name']})),
+                  );
                 },
               ),
             ),
