@@ -13,10 +13,17 @@ class MessageDetail extends StatefulWidget {
 
 class _MessageDetailState extends State<MessageDetail> {
   List list = [
-    {'to': '下雨了'},
     {'time': '21:11'},
+    {
+      'to': 'Flutter是谷歌的移动UI框架，可以快速在iOS和Android上构建高质量的原生用户界面。 '
+          'Flutter可以与现有的代码一起工作。在全世界，Flutter正在被越来越多的开发者和组织使用，并且Flutter是完全免费、开源的。'
+    },
     {'to': '快跑'},
     {'from': '加班'},
+    {
+      'from': 'Flutter是谷歌的移动UI框架，可以快速在iOS和Android上构建高质量的原生用户界面。 '
+          'Flutter可以与现有的代码一起工作。在全世界，Flutter正在被越来越多的开发者和组织使用，并且Flutter是完全免费、开源的。'
+    },
     {'time': '21:11'},
     {'to': '快跑'},
     {'to': '下雨了'},
@@ -72,7 +79,7 @@ class _MessageDetailState extends State<MessageDetail> {
               children: list.map<Widget>((item) {
                 return item['time'] == null
                     ? Container(
-                        margin: EdgeInsets.only(bottom: 8),
+                        margin: EdgeInsets.only(bottom: ScreenUtil.getInstance().setHeight(28.0)),
                         child: item['from'] == null
                             ? Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -83,29 +90,43 @@ class _MessageDetailState extends State<MessageDetail> {
                                     width: ScreenUtil.getInstance().setWidth(80.0),
                                     height: ScreenUtil.getInstance().setWidth(80.0),
                                   ),
-                                  Container(
-                                    padding: EdgeInsets.all(6),
-                                    margin: EdgeInsets.only(left: 10),
-                                    decoration: BoxDecoration(
-                                        border: Border.all(color: Color(0xffCCCCCC)),
-                                        color: Colors.white,
-                                        borderRadius: BorderRadius.all(Radius.circular(6))),
-                                    child: Text(item['to']),
-                                  )
+                                  LimitedBox(
+                                    maxWidth: ScreenUtil.getInstance().setWidth(430.0),
+                                    child: Container(
+                                      padding: EdgeInsets.only(
+                                          left: ScreenUtil.getInstance().setWidth(20.0),
+                                          right: ScreenUtil.getInstance().setWidth(20.0),
+                                          top: ScreenUtil.getInstance().setWidth(24.0),
+                                          bottom: ScreenUtil.getInstance().setWidth(24.0)),
+                                      margin: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(20.0)),
+                                      decoration: BoxDecoration(
+                                          border: Border.all(color: Color(0xffCCCCCC)),
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.all(Radius.circular(6))),
+                                      child: Text(item['to']),
+                                    ),
+                                  ),
                                 ],
                               )
                             : Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
-                                  Container(
-                                    padding: EdgeInsets.all(6),
-                                    margin: EdgeInsets.only(right: 10),
-                                    decoration: BoxDecoration(
-                                        border: Border.all(color: Color(0xff6FB54D)),
-                                        color: Color(0xffA0E75A),
-                                        borderRadius: BorderRadius.all(Radius.circular(6))),
-                                    child: Text(item['from']),
+                                  LimitedBox(
+                                    maxWidth: ScreenUtil.getInstance().setWidth(430.0),
+                                    child: Container(
+                                      padding: EdgeInsets.only(
+                                          left: ScreenUtil.getInstance().setWidth(20.0),
+                                          right: ScreenUtil.getInstance().setWidth(20.0),
+                                          top: ScreenUtil.getInstance().setWidth(24.0),
+                                          bottom: ScreenUtil.getInstance().setWidth(24.0)),
+                                      margin: EdgeInsets.only(right: ScreenUtil.getInstance().setWidth(20.0)),
+                                      decoration: BoxDecoration(
+                                          border: Border.all(color: Color(0xff6FB54D)),
+                                          color: Color(0xffA0E75A),
+                                          borderRadius: BorderRadius.all(Radius.circular(6))),
+                                      child: Text(item['from']),
+                                    ),
                                   ),
                                   Image.asset(
                                     'images/li.jpg',
@@ -116,6 +137,7 @@ class _MessageDetailState extends State<MessageDetail> {
                               ),
                       )
                     : Container(
+                        margin: EdgeInsets.only(bottom: ScreenUtil.getInstance().setHeight(28.0)),
                         child: Center(
                           child: Container(
                             decoration: BoxDecoration(color: Color(0xffCFCFCF), borderRadius: BorderRadius.all(Radius.circular(8))),

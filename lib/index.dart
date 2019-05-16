@@ -30,7 +30,8 @@ class _IndexState extends State<Index> {
             return true;
           }),
       bottomNavigationBar: BottomNavigationBar(
-        selectedFontSize: 12,
+        selectedFontSize: ScreenUtil.getInstance().setSp(18.0),
+        unselectedFontSize: ScreenUtil.getInstance().setSp(18.0),
         items: <BottomNavigationBarItem>[
           new BottomNavigationBarItem(
             icon: Image.asset(
@@ -38,44 +39,53 @@ class _IndexState extends State<Index> {
               width: 32.0,
               height: 28.0,
             ),
-            title: Text(
-              '微信',
-              style: TextStyle(color: _tabIndex == 0 ? Color(0xFF46c01b) : Color(0xff999999)),
+            title: Container(
+              padding: EdgeInsets.only(top: ScreenUtil.getInstance().setWidth(8.0)),
+              child: Text(
+                '微信',
+                style: TextStyle(color: _tabIndex == 0 ? Color(0xFF46c01b) : Color(0xff999999)),
+              ),
             ),
           ),
           new BottomNavigationBarItem(
-            icon: Image.asset(
-              _tabIndex == 1 ? 'images/contact_list_pressed.png' : 'images/contact_list_normal.png',
-              width: 32.0,
-              height: 28.0,
-            ),
-            title: Text(
-              '通讯录',
-              style: TextStyle(color: _tabIndex == 1 ? Color(0xFF46c01b) : Color(0xff999999)),
-            ),
-          ),
+              icon: Image.asset(
+                _tabIndex == 1 ? 'images/contact_list_pressed.png' : 'images/contact_list_normal.png',
+                width: 32.0,
+                height: 28.0,
+              ),
+              title: Container(
+                padding: EdgeInsets.only(top: ScreenUtil.getInstance().setWidth(8.0)),
+                child: Text(
+                  '通讯录',
+                  style: TextStyle(color: _tabIndex == 1 ? Color(0xFF46c01b) : Color(0xff999999)),
+                ),
+              )),
           new BottomNavigationBarItem(
-            icon: Image.asset(
-              _tabIndex == 2 ? 'images/find_pressed.png' : 'images/find_normal.png',
-              width: 32.0,
-              height: 28.0,
-            ),
-            title: Text(
-              '发现',
-              style: TextStyle(color: _tabIndex == 2 ? Color(0xFF46c01b) : Color(0xff999999)),
-            ),
-          ),
+              icon: Image.asset(
+                _tabIndex == 2 ? 'images/find_pressed.png' : 'images/find_normal.png',
+                width: 32.0,
+                height: 28.0,
+              ),
+              title: Container(
+                padding: EdgeInsets.only(top: ScreenUtil.getInstance().setWidth(8.0)),
+                child: Text(
+                  '发现',
+                  style: TextStyle(color: _tabIndex == 2 ? Color(0xFF46c01b) : Color(0xff999999)),
+                ),
+              )),
           new BottomNavigationBarItem(
-            icon: Image.asset(
-              _tabIndex == 3 ? 'images/profile_pressed.png' : 'images/profile_normal.png',
-              width: 32.0,
-              height: 28.0,
-            ),
-            title: Text(
-              '我',
-              style: TextStyle(color: _tabIndex == 3 ? Color(0xFF46c01b) : Color(0xff999999)),
-            ),
-          ),
+              icon: Image.asset(
+                _tabIndex == 3 ? 'images/profile_pressed.png' : 'images/profile_normal.png',
+                width: 32.0,
+                height: 28.0,
+              ),
+              title: Container(
+                padding: EdgeInsets.only(top: ScreenUtil.getInstance().setWidth(8.0)),
+                child: Text(
+                  '我',
+                  style: TextStyle(color: _tabIndex == 3 ? Color(0xFF46c01b) : Color(0xff999999)),
+                ),
+              )),
         ],
         type: BottomNavigationBarType.fixed,
         currentIndex: _tabIndex,
