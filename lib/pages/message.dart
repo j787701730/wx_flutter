@@ -5,6 +5,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 //import 'package:fluro/fluro.dart';
 //import '../routes.dart';
 import 'message_detail.dart';
+import 'wx_scan.dart';
 
 class Message extends StatefulWidget {
   @override
@@ -14,23 +15,33 @@ class Message extends StatefulWidget {
 class _MessageState extends State<Message> {
   _popupMenuItem(title, image, {textSize = 14.0, imgSize: 32.0}) {
     return PopupMenuItem(
-      child: Row(
+      child: GestureDetector(
+        child: Row(
 //        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Image.asset(
-            image,
-            width: imgSize,
-            height: imgSize,
-          ),
-          Container(
-            width: 6,
-          ),
-          Text(
-            title,
-            style: TextStyle(color: Colors.white, fontSize: textSize),
-          )
-        ],
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Image.asset(
+              image,
+              width: imgSize,
+              height: imgSize,
+            ),
+            Container(
+              width: 6,
+            ),
+            Text(
+              title,
+              style: TextStyle(color: Colors.white, fontSize: textSize),
+            )
+          ],
+        ),
+        onTap: () {
+          if (title == '扫一扫') {
+            Navigator.push(
+              context,
+              new MaterialPageRoute(builder: (context) => new WxScan()),
+            );
+          }
+        },
       ),
     );
   }
@@ -103,7 +114,8 @@ class _MessageState extends State<Message> {
 //                  child: new Text('3'),
 //                  foregroundColor: Colors.white,
 //                ),
-                contentPadding: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(20), right: ScreenUtil.getInstance().setWidth(20)),
+                contentPadding: EdgeInsets.only(
+                    left: ScreenUtil.getInstance().setWidth(20), right: ScreenUtil.getInstance().setWidth(20)),
                 leading: Image.asset(item['pic']),
                 title: Container(
                   child: Row(
