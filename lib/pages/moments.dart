@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Moments extends StatefulWidget {
   @override
@@ -7,10 +8,13 @@ class Moments extends StatefulWidget {
 
 class _MomentsState extends State<Moments> {
   var width;
+  var top;
   bool show = false;
+  var colorBg = Colors.white;
   ScrollController _controller = new ScrollController();
 
   List<Widget> _sliverBuilder(BuildContext context, bool innerBoxIsScrolled) {
+    ScreenUtil.instance = ScreenUtil(width: 640, height: 1136)..init(context);
     return <Widget>[
       SliverAppBar(
         title: Text(show ? '朋友圈' : ''),
@@ -35,18 +39,19 @@ class _MomentsState extends State<Moments> {
         //标题居中
         centerTitle: true,
         //展开高度200
-        expandedHeight: MediaQuery.of(context).size.width - MediaQuery.of(context).padding.top + 40,
+        expandedHeight: MediaQuery.of(context).size.width - MediaQuery.of(context).padding.top + ScreenUtil.getInstance().setHeight(48.0),
         //不随着滑动隐藏标题
         floating: true,
         //固定在顶部
         pinned: true,
+        backgroundColor: show ? null : Colors.white,
         flexibleSpace: FlexibleSpaceBar(
 //          centerTitle: true,
 //          title: Text('我是一个FlexibleSpaceBar'),
           collapseMode: CollapseMode.pin,
           background: Container(
             color: Colors.white,
-            height: MediaQuery.of(context).size.width - MediaQuery.of(context).padding.top + 40,
+            height: MediaQuery.of(context).size.width - MediaQuery.of(context).padding.top + ScreenUtil.getInstance().setHeight(48.0),
             child: Stack(
               children: <Widget>[
                 Positioned(
@@ -60,19 +65,19 @@ class _MomentsState extends State<Moments> {
                 ),
                 Positioned(
                   bottom: 0,
-                  right: 10,
+                  right: ScreenUtil.getInstance().setWidth(20),
                   child: Row(
                     children: <Widget>[
                       Text(
                         '简单快乐',
-                        style: TextStyle(color: Colors.white, fontSize: 30),
+                        style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getInstance().setSp(32)),
                       ),
                       Container(
-                        width: 10,
+                        width: ScreenUtil.getInstance().setWidth(40),
                       ),
                       Container(
-                        width: 120,
-                        height: 120,
+                        width: ScreenUtil.getInstance().setWidth(150.0),
+                        height: ScreenUtil.getInstance().setHeight(150.0),
                         decoration: BoxDecoration(border: Border.all(color: Color(0xffcccccc))),
                         child: Image.asset(
                           'images/yu.jpg',
@@ -94,7 +99,8 @@ class _MomentsState extends State<Moments> {
     // TODO: implement initState
     super.initState();
     _controller.addListener(() {
-      if (width == _controller.offset - 40) {
+      print(width - 356);
+      if ((width).toStringAsFixed(2) == (_controller.offset - ScreenUtil.getInstance().setHeight(48.0)).toStringAsFixed(2)) {
         setState(() {
           show = true;
         });
@@ -120,7 +126,9 @@ class _MomentsState extends State<Moments> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.instance = ScreenUtil(width: 640, height: 1136)..init(context);
     width = MediaQuery.of(context).size.width;
+    top = MediaQuery.of(context).padding.top;
     return Scaffold(
       body: NestedScrollView(
           controller: _controller,
@@ -128,7 +136,7 @@ class _MomentsState extends State<Moments> {
           body: Container(
             color: Colors.white,
             child: ListView(
-              padding: EdgeInsets.only(top: 10, left: 10),
+              padding: EdgeInsets.only(top: ScreenUtil.getInstance().setWidth(18.0), left: ScreenUtil.getInstance().setWidth(18.0)),
               children: arr.map<Widget>((item) {
                 return Container(
                   child: Row(
@@ -137,29 +145,118 @@ class _MomentsState extends State<Moments> {
                     children: <Widget>[
                       Container(
                         child: Image.asset('images/${item['pic']}.jpg'),
-                        width: 100,
-                        height: 100,
+                        width: ScreenUtil.getInstance().setWidth(84.0),
+                        height: ScreenUtil.getInstance().setHeight(84.0),
                       ),
                       Expanded(
                         child: Container(
-                          padding: EdgeInsets.only(left: 10, right: 10),
+                          padding: EdgeInsets.only(
+                              left: ScreenUtil.getInstance().setWidth(18.0), right: ScreenUtil.getInstance().setWidth(18.0)),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
                                 '${item['name']}',
-                                style: TextStyle(color: Color(0xff576B95)),
+                                style: TextStyle(color: Color(0xff576B95), fontSize: ScreenUtil.getInstance().setSp(28.0)),
                               ),
-                              Text('${item['msg']}'),
+                              Container(
+                                height: ScreenUtil.getInstance().setHeight(18.0),
+                              ),
+                              Text(
+                                '${item['msg']}',
+                                style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(30.0)),
+                              ),
+                              Container(
+                                height: ScreenUtil.getInstance().setHeight(18.0),
+                              ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
-                                  Text('2分钟前'),
+                                  Container(
+                                    child: Row(
+                                      children: <Widget>[
+                                        Text(
+                                          '2分钟前',
+                                          style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(24.0), color: Color(0xff737373)),
+                                        ),
+                                        Container(
+                                          width: ScreenUtil.getInstance().setWidth(20.0),
+                                        ),
+                                        Text(
+                                          'UC浏览器',
+                                          style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(24.0), color: Color(0xff737373)),
+                                        )
+                                      ],
+                                    ),
+                                  ),
                                   Icon(
                                     Icons.more,
-                                    color: Color(0xffcccccc),
+                                    color: Color(0xff97AAD0),
+                                    size: ScreenUtil.getInstance().setSp(36.0),
                                   )
                                 ],
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(10.0)),
+                                decoration: BoxDecoration(
+                                  color: Color(0xffF4F4F6),
+                                  border: Border(bottom: BorderSide(color: Color(0xffDDDEDF))),
+                                ),
+                                padding: EdgeInsets.only(
+                                    left: ScreenUtil.getInstance().setWidth(20.0),
+                                    top: ScreenUtil.getInstance().setHeight(10),
+                                    right: ScreenUtil.getInstance().setWidth(20.0),
+                                    bottom: ScreenUtil.getInstance().setHeight(10.0)),
+                                child: Wrap(
+                                  children: <Widget>[
+                                    Container(
+                                      child: Row(
+                                        children: <Widget>[
+                                          Icon(
+                                            Icons.favorite_border,
+                                            size: ScreenUtil.getInstance().setSp(24.0),
+                                            color: Color(0xff7081A5),
+                                          ),
+                                          Container(
+                                            width: ScreenUtil.getInstance().setWidth(12.0),
+                                          ),
+                                          Text(
+                                            '简单快乐',
+                                            style: TextStyle(color: Color(0xff7081A5), fontSize: ScreenUtil.getInstance().setSp(26.0)),
+                                          ),
+                                          Container(
+                                            width: ScreenUtil.getInstance().setWidth(12.0),
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Color(0xffF4F4F6),
+                                ),
+                                padding: EdgeInsets.only(
+                                    left: ScreenUtil.getInstance().setWidth(20.0),
+                                    top: ScreenUtil.getInstance().setHeight(10),
+                                    right: ScreenUtil.getInstance().setWidth(20.0),
+                                    bottom: ScreenUtil.getInstance().setHeight(10.0)),
+                                child: Wrap(
+                                  children: <Widget>[
+                                    Container(
+                                      child: Row(
+                                        children: <Widget>[
+                                          Text(
+                                            '简单快乐',
+                                            style: TextStyle(color: Color(0xff7081A5), fontSize: ScreenUtil.getInstance().setSp(26.0)),
+                                          ),
+                                          Text('：我要小姐姐')
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
                               )
                             ],
                           ),
