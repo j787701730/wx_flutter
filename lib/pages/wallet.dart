@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'balance.dart';
 
 class Wallet extends StatefulWidget {
   @override
@@ -180,22 +181,30 @@ class _WalletState extends State<Wallet> with WidgetsBindingObserver {
                 ),
                 Expanded(
                   flex: 1,
-                  child: Column(
-                    children: <Widget>[
-                      Icon(
-                        Icons.attach_money,
-                        color: Colors.white,
-                        size: ScreenUtil.getInstance().setSp(70.0),
-                      ),
-                      Text(
-                        '零钱',
-                        style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getInstance().setSp(28.0)),
-                      ),
-                      Text(
-                        '￥222.00',
-                        style: TextStyle(color: Color(0xffB4B7BC), fontSize: ScreenUtil.getInstance().setSp(24.0)),
-                      )
-                    ],
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        new MaterialPageRoute(builder: (context) => new Balance()),
+                      );
+                    },
+                    child: Column(
+                      children: <Widget>[
+                        Icon(
+                          Icons.attach_money,
+                          color: Colors.white,
+                          size: ScreenUtil.getInstance().setSp(70.0),
+                        ),
+                        Text(
+                          '零钱',
+                          style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getInstance().setSp(28.0)),
+                        ),
+                        Text(
+                          '￥222.00',
+                          style: TextStyle(color: Color(0xffB4B7BC), fontSize: ScreenUtil.getInstance().setSp(24.0)),
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
@@ -287,6 +296,7 @@ class _WalletState extends State<Wallet> with WidgetsBindingObserver {
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 border: Border(
+                                    left: BorderSide(color: Colors.white),
                                     bottom: BorderSide(color: Color(0xffE0E0E0)),
                                     right: (item['list'].indexOf(list) % 3 == 0 || item['list'].indexOf(list) % 3 == 1)
                                         ? BorderSide(color: Color(0xffE0E0E0))
