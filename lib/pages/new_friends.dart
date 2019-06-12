@@ -91,6 +91,7 @@ class _NewFriendsState extends State<NewFriends> with WidgetsBindingObserver {
                       margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(20.0)),
                       child: Text(
                         '添加手机联系人',
+
                         style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(24.0), color: Color(0xffC5C5C5)),
                       ))
                 ],
