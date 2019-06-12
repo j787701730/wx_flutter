@@ -6,7 +6,7 @@ class Moments extends StatefulWidget {
   _MomentsState createState() => _MomentsState();
 }
 
-class _MomentsState extends State<Moments> {
+class _MomentsState extends State<Moments> with WidgetsBindingObserver {
   var width;
   var top;
   bool show = false;
@@ -39,7 +39,9 @@ class _MomentsState extends State<Moments> {
         //标题居中
         centerTitle: true,
         //展开高度200
-        expandedHeight: MediaQuery.of(context).size.width - MediaQuery.of(context).padding.top + ScreenUtil.getInstance().setHeight(48.0),
+        expandedHeight: MediaQuery.of(context).size.width -
+            MediaQuery.of(context).padding.top +
+            ScreenUtil.getInstance().setHeight(48.0),
         //不随着滑动隐藏标题
         floating: true,
         //固定在顶部
@@ -51,7 +53,9 @@ class _MomentsState extends State<Moments> {
           collapseMode: CollapseMode.pin,
           background: Container(
             color: Colors.white,
-            height: MediaQuery.of(context).size.width - MediaQuery.of(context).padding.top + ScreenUtil.getInstance().setHeight(48.0),
+            height: MediaQuery.of(context).size.width -
+                MediaQuery.of(context).padding.top +
+                ScreenUtil.getInstance().setHeight(48.0),
             child: Stack(
               children: <Widget>[
                 Positioned(
@@ -99,8 +103,7 @@ class _MomentsState extends State<Moments> {
     // TODO: implement initState
     super.initState();
     _controller.addListener(() {
-      print(width - 356);
-      if ((width).toStringAsFixed(2) == (_controller.offset - ScreenUtil.getInstance().setHeight(48.0)).toStringAsFixed(2)) {
+      if (width - top < _controller.offset) {
         setState(() {
           show = true;
         });
@@ -110,6 +113,24 @@ class _MomentsState extends State<Moments> {
         });
       }
     });
+  }
+
+  @override
+  void didChangeDependencies() {
+    WidgetsBinding.instance.addPostFrameCallback(_position);
+    super.didChangeDependencies();
+  }
+
+  @override
+  void didUpdateWidget(oldWidget) {
+    WidgetsBinding.instance.addPostFrameCallback(_position);
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 
   List arr = [
@@ -124,11 +145,22 @@ class _MomentsState extends State<Moments> {
     {'pic': 'yu', 'name': '简单快乐', 'msg': '我要小姐姐'},
   ];
 
+  _position(Duration timeStamp) {
+    RenderObject renderObject = context.findRenderObject();
+    //获取元素大小
+    Size size = renderObject.paintBounds.size;
+    var vector3 = renderObject.getTransformTo(null)?.getTranslation();
+    print(vector3);
+    //获取元素位置
+//      var vector3 = renderObject.getTransformTo(null)?.getTranslation();
+//      CommonUtils.showChooseDialog(context, size, vector3);
+  }
+
   @override
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(width: 640, height: 1136)..init(context);
     width = MediaQuery.of(context).size.width;
-    top = MediaQuery.of(context).padding.top;
+    top = MediaQuery.of(context).padding.top + ScreenUtil.getInstance().setHeight(48.0);
     return Scaffold(
       body: NestedScrollView(
           controller: _controller,
@@ -136,7 +168,8 @@ class _MomentsState extends State<Moments> {
           body: Container(
             color: Colors.white,
             child: ListView(
-              padding: EdgeInsets.only(top: ScreenUtil.getInstance().setWidth(18.0), left: ScreenUtil.getInstance().setWidth(18.0)),
+              padding: EdgeInsets.only(
+                  top: ScreenUtil.getInstance().setWidth(18.0), left: ScreenUtil.getInstance().setWidth(18.0)),
               children: arr.map<Widget>((item) {
                 return Container(
                   child: Row(
@@ -151,13 +184,15 @@ class _MomentsState extends State<Moments> {
                       Expanded(
                         child: Container(
                           padding: EdgeInsets.only(
-                              left: ScreenUtil.getInstance().setWidth(18.0), right: ScreenUtil.getInstance().setWidth(18.0)),
+                              left: ScreenUtil.getInstance().setWidth(18.0),
+                              right: ScreenUtil.getInstance().setWidth(18.0)),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
                                 '${item['name']}',
-                                style: TextStyle(color: Color(0xff576B95), fontSize: ScreenUtil.getInstance().setSp(28.0)),
+                                style:
+                                    TextStyle(color: Color(0xff576B95), fontSize: ScreenUtil.getInstance().setSp(28.0)),
                               ),
                               Container(
                                 height: ScreenUtil.getInstance().setHeight(18.0),
@@ -177,23 +212,31 @@ class _MomentsState extends State<Moments> {
                                       children: <Widget>[
                                         Text(
                                           '2分钟前',
-                                          style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(24.0), color: Color(0xff737373)),
+                                          style: TextStyle(
+                                              fontSize: ScreenUtil.getInstance().setSp(24.0), color: Color(0xff737373)),
                                         ),
                                         Container(
                                           width: ScreenUtil.getInstance().setWidth(20.0),
                                         ),
                                         Text(
                                           'UC浏览器',
-                                          style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(24.0), color: Color(0xff737373)),
+                                          style: TextStyle(
+                                              fontSize: ScreenUtil.getInstance().setSp(24.0), color: Color(0xff737373)),
                                         )
                                       ],
                                     ),
                                   ),
-                                  Icon(
-                                    Icons.more,
-                                    color: Color(0xff97AAD0),
-                                    size: ScreenUtil.getInstance().setSp(36.0),
-                                  )
+                                  GestureDetector(
+                                    child: Icon(
+                                      Icons.more,
+                                      color: Color(0xff97AAD0),
+                                      size: ScreenUtil.getInstance().setSp(36.0),
+                                    ),
+                                    onTapDown: (detail) {
+                                      setState(() {});
+                                      WidgetsBinding.instance.addPostFrameCallback(_position);
+                                    },
+                                  ),
                                 ],
                               ),
                               Container(
@@ -222,7 +265,9 @@ class _MomentsState extends State<Moments> {
                                           ),
                                           Text(
                                             '简单快乐',
-                                            style: TextStyle(color: Color(0xff7081A5), fontSize: ScreenUtil.getInstance().setSp(26.0)),
+                                            style: TextStyle(
+                                                color: Color(0xff7081A5),
+                                                fontSize: ScreenUtil.getInstance().setSp(26.0)),
                                           ),
                                           Container(
                                             width: ScreenUtil.getInstance().setWidth(12.0),
@@ -249,7 +294,9 @@ class _MomentsState extends State<Moments> {
                                         children: <Widget>[
                                           Text(
                                             '简单快乐',
-                                            style: TextStyle(color: Color(0xff7081A5), fontSize: ScreenUtil.getInstance().setSp(26.0)),
+                                            style: TextStyle(
+                                                color: Color(0xff7081A5),
+                                                fontSize: ScreenUtil.getInstance().setSp(26.0)),
                                           ),
                                           Text('：我要小姐姐')
                                         ],
