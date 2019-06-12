@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'message_detail.dart';
+import 'new_friends.dart';
 
 class Contacts extends StatefulWidget {
   @override
@@ -89,32 +90,38 @@ class _ContactsState extends State<Contacts> {
               ),
             ),
             Container(
-              decoration:
-                  BoxDecoration(color: Colors.white, border: Border(bottom: BorderSide(color: Color(0xffD7D7D7)))),
+              decoration: BoxDecoration(color: Colors.white, border: Border(bottom: BorderSide(color: Color(0xffD7D7D7)))),
               padding: EdgeInsets.only(
                   left: ScreenUtil.getInstance().setWidth(20.0),
                   top: ScreenUtil.getInstance().setWidth(20.0),
                   bottom: ScreenUtil.getInstance().setWidth(20.0)),
-              child: Row(
-                children: <Widget>[
-                  Image.asset(
-                    'images/icon_addfriend.png',
-                    width: ScreenUtil.getInstance().setWidth(72.0),
-                    height: ScreenUtil.getInstance().setHeight(72.0),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(20.0)),
-                    child: Text(
-                      '新的朋友',
-                      style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(30.0)),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    new MaterialPageRoute(builder: (context) => new NewFriends()),
+                  );
+                },
+                child: Row(
+                  children: <Widget>[
+                    Image.asset(
+                      'images/icon_addfriend.png',
+                      width: ScreenUtil.getInstance().setWidth(72.0),
+                      height: ScreenUtil.getInstance().setHeight(72.0),
                     ),
-                  )
-                ],
+                    Container(
+                      padding: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(20.0)),
+                      child: Text(
+                        '新的朋友',
+                        style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(30.0)),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
             Container(
-              decoration:
-                  BoxDecoration(color: Colors.white, border: Border(bottom: BorderSide(color: Color(0xffD7D7D7)))),
+              decoration: BoxDecoration(color: Colors.white, border: Border(bottom: BorderSide(color: Color(0xffD7D7D7)))),
               padding: EdgeInsets.only(
                   left: ScreenUtil.getInstance().setWidth(20.0),
                   top: ScreenUtil.getInstance().setWidth(20.0),
@@ -137,8 +144,7 @@ class _ContactsState extends State<Contacts> {
               ),
             ),
             Container(
-              decoration:
-                  BoxDecoration(color: Colors.white, border: Border(bottom: BorderSide(color: Color(0xffD7D7D7)))),
+              decoration: BoxDecoration(color: Colors.white, border: Border(bottom: BorderSide(color: Color(0xffD7D7D7)))),
               padding: EdgeInsets.only(
                   left: ScreenUtil.getInstance().setWidth(20.0),
                   top: ScreenUtil.getInstance().setWidth(20.0),
@@ -241,8 +247,7 @@ class _ContactsState extends State<Contacts> {
                     Column(
                       children: item['items'].map<Widget>((child) {
                         return Container(
-                          decoration: BoxDecoration(
-                              color: Colors.white, border: Border(bottom: BorderSide(color: Color(0xffD7D7D7)))),
+                          decoration: BoxDecoration(color: Colors.white, border: Border(bottom: BorderSide(color: Color(0xffD7D7D7)))),
                           padding: EdgeInsets.only(
                               left: ScreenUtil.getInstance().setWidth(20.0),
                               top: ScreenUtil.getInstance().setWidth(20.0),
@@ -251,8 +256,7 @@ class _ContactsState extends State<Contacts> {
                             onTap: () {
                               Navigator.push(
                                 context,
-                                new MaterialPageRoute(
-                                    builder: (context) => new MessageDetail({'name': '${child['name']}'})),
+                                new MaterialPageRoute(builder: (context) => new MessageDetail({'name': '${child['name']}'})),
                               );
                             },
                             child: Row(

@@ -144,7 +144,7 @@ class _WalletState extends State<Wallet> with WidgetsBindingObserver {
         centerTitle: true,
         backgroundColor: Color(0xff686F78),
         //展开高度200
-        expandedHeight: ScreenUtil.getInstance().setHeight(230.0),
+        expandedHeight: ScreenUtil.getInstance().setHeight(250.0),
         //不随着滑动隐藏标题
         floating: false,
         //固定在顶部
@@ -156,7 +156,7 @@ class _WalletState extends State<Wallet> with WidgetsBindingObserver {
           collapseMode: CollapseMode.none,
           background: Container(
             color: Color(0xff686F78),
-            padding: EdgeInsets.only(top: top + 20),
+            padding: EdgeInsets.only(top: top),
 //            height: ScreenUtil.getInstance().setHeight(230.0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
