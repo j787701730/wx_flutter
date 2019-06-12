@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'balance.dart';
+import 'money.dart';
 
 class Wallet extends StatefulWidget {
   @override
@@ -163,19 +164,27 @@ class _WalletState extends State<Wallet> with WidgetsBindingObserver {
               children: <Widget>[
                 Expanded(
                   flex: 1,
-                  child: Center(
-                    child: Column(
-                      children: <Widget>[
-                        Icon(
-                          Icons.crop_free,
-                          color: Colors.white,
-                          size: ScreenUtil.getInstance().setSp(70.0),
-                        ),
-                        Text(
-                          '收付款',
-                          style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getInstance().setSp(28.0)),
-                        )
-                      ],
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        new MaterialPageRoute(builder: (context) => new Money()),
+                      );
+                    },
+                    child: Center(
+                      child: Column(
+                        children: <Widget>[
+                          Icon(
+                            Icons.crop_free,
+                            color: Colors.white,
+                            size: ScreenUtil.getInstance().setSp(70.0),
+                          ),
+                          Text(
+                            '收付款',
+                            style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getInstance().setSp(28.0)),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
