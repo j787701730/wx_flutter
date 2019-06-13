@@ -39,7 +39,8 @@ class _ChatDetailState extends State<ChatDetail> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border: Border(bottom: BorderSide(color: Color(0xffD9D9D9)), top: BorderSide(color: Color(0xffD9D9D9)))),
+                  border: Border(bottom: BorderSide(color: Color(0xffD9D9D9),width: ScreenUtil.getInstance().setWidth(1)),
+                      top: BorderSide(color: Color(0xffD9D9D9),width: ScreenUtil.getInstance().setWidth(1)))),
               padding: EdgeInsets.only(top: ScreenUtil.getInstance().setWidth(36.0)),
               height: ScreenUtil.getInstance().setHeight(210.0),
               child: Row(
@@ -78,7 +79,7 @@ class _ChatDetailState extends State<ChatDetail> {
                     height: ScreenUtil.getInstance().setHeight(100.0),
                     width: ScreenUtil.getInstance().setWidth(100.0),
                     decoration:
-                        BoxDecoration(border: Border.all(color: Color(0xffCCCCCC)), borderRadius: BorderRadius.all(Radius.circular(6))),
+                        BoxDecoration(border: Border.all(color: Color(0xffCCCCCC),width: ScreenUtil.getInstance().setWidth(1)), borderRadius: BorderRadius.all(Radius.circular(6))),
                     child: Center(
                       child: Icon(
                         Icons.add,
@@ -93,7 +94,8 @@ class _ChatDetailState extends State<ChatDetail> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border: Border(bottom: BorderSide(color: Color(0xffD9D9D9)), top: BorderSide(color: Color(0xffD9D9D9)))),
+                  border: Border(bottom: BorderSide(color: Color(0xffD9D9D9),width: ScreenUtil.getInstance().setWidth(1)),
+                      top: BorderSide(color: Color(0xffD9D9D9),width: ScreenUtil.getInstance().setWidth(1)))),
 //              padding: EdgeInsets.only(top: ScreenUtil.getInstance().setWidth(36.0)),
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(40.0)),
               height: ScreenUtil.getInstance().setHeight(88.0),
@@ -121,7 +123,8 @@ class _ChatDetailState extends State<ChatDetail> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border: Border(bottom: BorderSide(color: Color(0xffD9D9D9)), top: BorderSide(color: Color(0xffD9D9D9)))),
+                  border: Border(bottom: BorderSide(color: Color(0xffD9D9D9),width: ScreenUtil.getInstance().setWidth(1)),
+                      top: BorderSide(color: Color(0xffD9D9D9),width: ScreenUtil.getInstance().setWidth(1)))),
 //              padding: EdgeInsets.only(top: ScreenUtil.getInstance().setWidth(36.0)),
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(40.0)),
               height: ScreenUtil.getInstance().setHeight(88.0),
@@ -149,7 +152,8 @@ class _ChatDetailState extends State<ChatDetail> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border: Border(bottom: BorderSide(color: Color(0xffD9D9D9)), top: BorderSide(color: Color(0xffD9D9D9)))),
+                  border: Border(bottom: BorderSide(color: Color(0xffD9D9D9),width: ScreenUtil.getInstance().setWidth(1)),
+                      top: BorderSide(color: Color(0xffD9D9D9),width: ScreenUtil.getInstance().setWidth(1)))),
 //              padding: EdgeInsets.only(top: ScreenUtil.getInstance().setWidth(36.0)),
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(40.0)),
               height: ScreenUtil.getInstance().setHeight(88.0),
@@ -174,7 +178,7 @@ class _ChatDetailState extends State<ChatDetail> {
               decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border(
-                    bottom: BorderSide(color: Color(0xffD9D9D9)),
+                    bottom: BorderSide(color: Color(0xffD9D9D9),width: ScreenUtil.getInstance().setWidth(1)),
                   )),
               height: ScreenUtil.getInstance().setHeight(88.0),
               child: Row(
@@ -197,7 +201,8 @@ class _ChatDetailState extends State<ChatDetail> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border: Border(bottom: BorderSide(color: Color(0xffD9D9D9)), top: BorderSide(color: Color(0xffD9D9D9)))),
+                  border: Border(bottom: BorderSide(color: Color(0xffD9D9D9),width: ScreenUtil.getInstance().setWidth(1)),
+                      top: BorderSide(color: Color(0xffD9D9D9),width: ScreenUtil.getInstance().setWidth(1)))),
 //              padding: EdgeInsets.only(top: ScreenUtil.getInstance().setWidth(36.0)),
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(40.0)),
               height: ScreenUtil.getInstance().setHeight(88.0),
@@ -225,7 +230,8 @@ class _ChatDetailState extends State<ChatDetail> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border: Border(bottom: BorderSide(color: Color(0xffD9D9D9)), top: BorderSide(color: Color(0xffD9D9D9)))),
+                  border: Border(bottom: BorderSide(color: Color(0xffD9D9D9),width: ScreenUtil.getInstance().setWidth(1)),
+                      top: BorderSide(color: Color(0xffD9D9D9),width: ScreenUtil.getInstance().setWidth(1)))),
 //              padding: EdgeInsets.only(top: ScreenUtil.getInstance().setWidth(36.0)),
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(40.0)),
               height: ScreenUtil.getInstance().setHeight(88.0),
@@ -244,7 +250,8 @@ class _ChatDetailState extends State<ChatDetail> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border: Border(bottom: BorderSide(color: Color(0xffD9D9D9)), top: BorderSide(color: Color(0xffD9D9D9)))),
+                  border: Border(bottom: BorderSide(color: Color(0xffD9D9D9),width: ScreenUtil.getInstance().setWidth(1)),
+                      top: BorderSide(color: Color(0xffD9D9D9),width: ScreenUtil.getInstance().setWidth(1)))),
 //              padding: EdgeInsets.only(top: ScreenUtil.getInstance().setWidth(36.0)),
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(40.0)),
               height: ScreenUtil.getInstance().setHeight(88.0),

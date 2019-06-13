@@ -33,15 +33,15 @@ class _FindState extends State<Find> {
         title: Text('发现'),
       ),
       body: Container(
-        padding: EdgeInsets.only(bottom: ScreenUtil.getInstance().setHeight(40.0)),
         color: Color(0xffEFEFF5),
         child: ListView(
           children: <Widget>[
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border:
-                      Border(bottom: BorderSide(color: Color(0xffD8D8DA)), top: BorderSide(color: Color(0xffD8D8DA)))),
+                  border: Border(
+                      bottom: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)),
+                      top: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)))),
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(30.0)),
               height: ScreenUtil.getInstance().setHeight(88.0),
               child: InkWell(
@@ -96,8 +96,9 @@ class _FindState extends State<Find> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border:
-                      Border(bottom: BorderSide(color: Color(0xffD8D8DA)), top: BorderSide(color: Color(0xffD8D8DA)))),
+                  border: Border(
+                      bottom: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)),
+                      top: BorderSide(color: Color(0xffD8D8DA)))),
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(40.0)),
               height: ScreenUtil.getInstance().setHeight(88.0),
               child: Row(
@@ -137,8 +138,9 @@ class _FindState extends State<Find> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border:
-                      Border(bottom: BorderSide(color: Color(0xffD8D8DA)), top: BorderSide(color: Color(0xffD8D8DA)))),
+                  border: Border(
+                      bottom: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)),
+                      top: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)))),
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(40.0)),
               height: ScreenUtil.getInstance().setHeight(88.0),
               child: Row(
@@ -178,8 +180,9 @@ class _FindState extends State<Find> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border:
-                      Border(bottom: BorderSide(color: Color(0xffD8D8DA)), top: BorderSide(color: Color(0xffD8D8DA)))),
+                  border: Border(
+                      bottom: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)),
+                      top: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)))),
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(40.0)),
               height: ScreenUtil.getInstance().setHeight(88.0),
               child: Row(
@@ -219,8 +222,9 @@ class _FindState extends State<Find> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border:
-                      Border(bottom: BorderSide(color: Color(0xffD8D8DA)), top: BorderSide(color: Color(0xffD8D8DA)))),
+                  border: Border(
+                      bottom: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)),
+                      top: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)))),
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(40.0)),
               height: ScreenUtil.getInstance().setHeight(88.0),
               child: Row(
@@ -260,8 +264,9 @@ class _FindState extends State<Find> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border:
-                      Border(bottom: BorderSide(color: Color(0xffD8D8DA)), top: BorderSide(color: Color(0xffD8D8DA)))),
+                  border: Border(
+                      bottom: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)),
+                      top: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)))),
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(40.0)),
               height: ScreenUtil.getInstance().setHeight(88.0),
               child: Row(
@@ -301,8 +306,9 @@ class _FindState extends State<Find> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border:
-                      Border(bottom: BorderSide(color: Color(0xffD8D8DA)), top: BorderSide(color: Color(0xffD8D8DA)))),
+                  border: Border(
+                      bottom: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)),
+                      top: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)))),
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(40.0)),
               height: ScreenUtil.getInstance().setHeight(88.0),
               child: Row(
@@ -342,8 +348,9 @@ class _FindState extends State<Find> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border:
-                      Border(bottom: BorderSide(color: Color(0xffD8D8DA)), top: BorderSide(color: Color(0xffD8D8DA)))),
+                  border: Border(
+                      bottom: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)),
+                      top: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)))),
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(40.0)),
               height: ScreenUtil.getInstance().setHeight(88.0),
               child: Row(
@@ -383,8 +390,9 @@ class _FindState extends State<Find> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border:
-                      Border(bottom: BorderSide(color: Color(0xffD8D8DA)), top: BorderSide(color: Color(0xffD8D8DA)))),
+                  border: Border(
+                      bottom: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)),
+                      top: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)))),
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(40.0)),
               height: ScreenUtil.getInstance().setHeight(88.0),
               child: Row(
@@ -424,8 +432,9 @@ class _FindState extends State<Find> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border:
-                      Border(bottom: BorderSide(color: Color(0xffD8D8DA)), top: BorderSide(color: Color(0xffD8D8DA)))),
+                  border: Border(
+                      bottom: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)),
+                      top: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)))),
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(40.0)),
               height: ScreenUtil.getInstance().setHeight(88.0),
               child: Row(
@@ -461,6 +470,9 @@ class _FindState extends State<Find> {
                   )
                 ],
               ),
+            ),
+            Container(
+              height: ScreenUtil.getInstance().setHeight(40.0),
             )
           ],
         ),

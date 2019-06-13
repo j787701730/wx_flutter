@@ -86,7 +86,7 @@ class _MoneyState extends State<Money> {
                     padding: EdgeInsets.only(
                       bottom: ScreenUtil.getInstance().setHeight(40.0),
                     ),
-                    decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Color(0xffE5E5E5)))),
+                    decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Color(0xffE5E5E5),width: ScreenUtil.getInstance().setWidth(1)))),
                     child: Center(
                       child: Image.asset(
                         'images/qcode.png',
@@ -152,7 +152,7 @@ class _MoneyState extends State<Money> {
                         bottom: ScreenUtil.getInstance().setWidth(20.0),
                         left: ScreenUtil.getInstance().setWidth(30.0),
                         right: ScreenUtil.getInstance().setWidth(30.0)),
-                    decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Color(0xff6AA77A)))),
+                    decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Color(0xff6AA77A),width: ScreenUtil.getInstance().setWidth(1)))),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -188,7 +188,7 @@ class _MoneyState extends State<Money> {
                         bottom: ScreenUtil.getInstance().setWidth(20.0),
                         left: ScreenUtil.getInstance().setWidth(30.0),
                         right: ScreenUtil.getInstance().setWidth(30.0)),
-                    decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Color(0xff6AA77A)))),
+                    decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Color(0xff6AA77A),width: ScreenUtil.getInstance().setWidth(1)))),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -224,7 +224,7 @@ class _MoneyState extends State<Money> {
                         bottom: ScreenUtil.getInstance().setWidth(20.0),
                         left: ScreenUtil.getInstance().setWidth(30.0),
                         right: ScreenUtil.getInstance().setWidth(30.0)),
-                    decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Color(0xff6AA77A)))),
+                    decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Color(0xff6AA77A),width: ScreenUtil.getInstance().setWidth(1)))),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -260,7 +260,7 @@ class _MoneyState extends State<Money> {
                         bottom: ScreenUtil.getInstance().setWidth(20.0),
                         left: ScreenUtil.getInstance().setWidth(30.0),
                         right: ScreenUtil.getInstance().setWidth(30.0)),
-                    decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Color(0xff6AA77A)))),
+                    decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Color(0xff6AA77A),width: ScreenUtil.getInstance().setWidth(1)))),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[

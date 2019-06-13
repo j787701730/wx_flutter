@@ -100,7 +100,7 @@ class _MessageDetailState extends State<MessageDetail> {
                                           bottom: ScreenUtil.getInstance().setWidth(24.0)),
                                       margin: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(20.0)),
                                       decoration: BoxDecoration(
-                                          border: Border.all(color: Color(0xffCCCCCC)),
+                                          border: Border.all(color: Color(0xffCCCCCC),width: ScreenUtil.getInstance().setWidth(1)),
                                           color: Colors.white,
                                           borderRadius: BorderRadius.all(Radius.circular(6))),
                                       child: Text(item['to']),
@@ -122,7 +122,7 @@ class _MessageDetailState extends State<MessageDetail> {
                                           bottom: ScreenUtil.getInstance().setWidth(24.0)),
                                       margin: EdgeInsets.only(right: ScreenUtil.getInstance().setWidth(20.0)),
                                       decoration: BoxDecoration(
-                                          border: Border.all(color: Color(0xff6FB54D)),
+                                          border: Border.all(color: Color(0xff6FB54D),width: ScreenUtil.getInstance().setWidth(1)),
                                           color: Color(0xffA0E75A),
                                           borderRadius: BorderRadius.all(Radius.circular(6))),
                                       child: Text(item['from']),
@@ -158,7 +158,7 @@ class _MessageDetailState extends State<MessageDetail> {
           Container(
             width: MediaQuery.of(context).size.width,
             height: ScreenUtil.getInstance().setHeight(100.0),
-            decoration: BoxDecoration(color: Color(0xffF2F2F4), border: Border(top: BorderSide(color: Color(0xffD5D5D7)))),
+            decoration: BoxDecoration(color: Color(0xffF2F2F4), border: Border(top: BorderSide(color: Color(0xffD5D5D7),width: ScreenUtil.getInstance().setWidth(1)))),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
@@ -178,7 +178,7 @@ class _MessageDetailState extends State<MessageDetail> {
                   height: ScreenUtil.getInstance().setHeight(72.0),
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      border: Border.all(color: Color(0xffDDDDDD)),
+                      border: Border.all(color: Color(0xffDDDDDD),width: ScreenUtil.getInstance().setWidth(1)),
                       borderRadius: BorderRadius.all(Radius.circular(6))),
                   child: null,
                 ),

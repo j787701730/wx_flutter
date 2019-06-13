@@ -39,7 +39,8 @@ class _PersonalState extends State<Personal> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border: Border(bottom: BorderSide(color: Color(0xffD8D8DA)), top: BorderSide(color: Color(0xffD8D8DA)))),
+                  border: Border(bottom: BorderSide(color: Color(0xffD8D8DA),width: ScreenUtil.getInstance().setWidth(1)),
+                      top: BorderSide(color: Color(0xffD8D8DA),width: ScreenUtil.getInstance().setWidth(1)))),
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(30.0)),
               height: ScreenUtil.getInstance().setHeight(176.0),
               child: Row(
@@ -103,7 +104,8 @@ class _PersonalState extends State<Personal> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border: Border(bottom: BorderSide(color: Color(0xffD8D8DA)), top: BorderSide(color: Color(0xffD8D8DA)))),
+                  border: Border(bottom: BorderSide(color: Color(0xffD8D8DA),width: ScreenUtil.getInstance().setWidth(1)),
+                      top: BorderSide(color: Color(0xffD8D8DA),width: ScreenUtil.getInstance().setWidth(1)))),
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(40.0)),
               height: ScreenUtil.getInstance().setHeight(88.0),
               child: InkWell(
@@ -149,7 +151,7 @@ class _PersonalState extends State<Personal> {
               ),
             ),
             Container(
-              decoration: BoxDecoration(color: Colors.white, border: Border(top: BorderSide(color: Color(0xffD8D8DA)))),
+              decoration: BoxDecoration(color: Colors.white, border: Border(top: BorderSide(color: Color(0xffD8D8DA),width: ScreenUtil.getInstance().setWidth(1)))),
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(40.0)),
               height: ScreenUtil.getInstance().setHeight(88.0),
               child: Row(
@@ -190,7 +192,7 @@ class _PersonalState extends State<Personal> {
               decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border(
-                    top: BorderSide(color: Color(0xffD8D8DA)),
+                    top: BorderSide(color: Color(0xffD8D8DA),width: ScreenUtil.getInstance().setWidth(1)),
                   )),
               height: ScreenUtil.getInstance().setHeight(88.0),
               child: Row(
@@ -228,7 +230,7 @@ class _PersonalState extends State<Personal> {
               ),
             ),
             Container(
-              decoration: BoxDecoration(color: Colors.white, border: Border(top: BorderSide(color: Color(0xffD8D8DA)))),
+              decoration: BoxDecoration(color: Colors.white, border: Border(top: BorderSide(color: Color(0xffD8D8DA),width: ScreenUtil.getInstance().setWidth(1)))),
               height: ScreenUtil.getInstance().setHeight(88.0),
               child: Row(
                 children: <Widget>[
@@ -267,7 +269,7 @@ class _PersonalState extends State<Personal> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border: Border(bottom: BorderSide(color: Color(0xffD8D8DA)), top: BorderSide(color: Color(0xffD8D8DA)))),
+                  border: Border(bottom: BorderSide(color: Color(0xffD8D8DA),width: ScreenUtil.getInstance().setWidth(1)), top: BorderSide(color: Color(0xffD8D8DA),width: ScreenUtil.getInstance().setWidth(1)))),
               height: ScreenUtil.getInstance().setHeight(88.0),
               child: Row(
                 children: <Widget>[
@@ -306,7 +308,7 @@ class _PersonalState extends State<Personal> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border: Border(bottom: BorderSide(color: Color(0xffD8D8DA)), top: BorderSide(color: Color(0xffD8D8DA)))),
+                  border: Border(bottom: BorderSide(color: Color(0xffD8D8DA),width: ScreenUtil.getInstance().setWidth(1)), top: BorderSide(color: Color(0xffD8D8DA),width: ScreenUtil.getInstance().setWidth(1)))),
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(40.0)),
               height: ScreenUtil.getInstance().setHeight(88.0),
               child: Row(

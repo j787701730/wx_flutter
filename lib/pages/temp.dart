@@ -32,7 +32,7 @@ class _AddContactsState extends State<AddContacts> with WidgetsBindingObserver {
               height: ScreenUtil.getInstance().setHeight(56.0),
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border: Border.all(color: Color(0xffD9D9DB)),
+                  border: Border.all(color: Color(0xffD9D9DB),width: ScreenUtil.getInstance().setWidth(1)),
                   borderRadius: BorderRadius.all(Radius.circular(ScreenUtil.getInstance().setWidth(6.0)))),
               child: Stack(
                 children: <Widget>[

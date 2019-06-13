@@ -292,7 +292,7 @@ class _WalletState extends State<Wallet> with WidgetsBindingObserver {
                           style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(22.0)),
                         ),
                         decoration: BoxDecoration(
-                            border: Border(bottom: BorderSide(color: Color(0xffE0E0E0))), color: Colors.white),
+                            border: Border(bottom: BorderSide(color: Color(0xffE0E0E0),width: ScreenUtil.getInstance().setWidth(1))), color: Colors.white),
                       ),
                       Wrap(
                         children: item['list'].map<Widget>((list) {
@@ -305,11 +305,11 @@ class _WalletState extends State<Wallet> with WidgetsBindingObserver {
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 border: Border(
-                                    left: BorderSide(color: Colors.white),
-                                    bottom: BorderSide(color: Color(0xffE0E0E0)),
+                                    left: BorderSide(color: Colors.white,width: ScreenUtil.getInstance().setWidth(1)),
+                                    bottom: BorderSide(color: Color(0xffE0E0E0),width: ScreenUtil.getInstance().setWidth(1)),
                                     right: (item['list'].indexOf(list) % 3 == 0 || item['list'].indexOf(list) % 3 == 1)
-                                        ? BorderSide(color: Color(0xffE0E0E0))
-                                        : BorderSide(color: Colors.white))),
+                                        ? BorderSide(color: Color(0xffE0E0E0),width: ScreenUtil.getInstance().setWidth(1))
+                                        : BorderSide(color: Colors.white,width: ScreenUtil.getInstance().setWidth(1)))),
                             child: Column(
                               children: <Widget>[
                                 list['icon'],

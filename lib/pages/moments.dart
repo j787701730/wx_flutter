@@ -82,7 +82,7 @@ class _MomentsState extends State<Moments> with WidgetsBindingObserver {
                       Container(
                         width: ScreenUtil.getInstance().setWidth(150.0),
                         height: ScreenUtil.getInstance().setHeight(150.0),
-                        decoration: BoxDecoration(border: Border.all(color: Color(0xffcccccc))),
+                        decoration: BoxDecoration(border: Border.all(color: Color(0xffcccccc),width: ScreenUtil.getInstance().setWidth(1))),
                         child: Image.asset(
                           'images/yu.jpg',
                         ),
@@ -243,7 +243,7 @@ class _MomentsState extends State<Moments> with WidgetsBindingObserver {
                                 margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(10.0)),
                                 decoration: BoxDecoration(
                                   color: Color(0xffF4F4F6),
-                                  border: Border(bottom: BorderSide(color: Color(0xffDDDEDF))),
+                                  border: Border(bottom: BorderSide(color: Color(0xffDDDEDF),width: ScreenUtil.getInstance().setWidth(1))),
                                 ),
                                 padding: EdgeInsets.only(
                                     left: ScreenUtil.getInstance().setWidth(20.0),

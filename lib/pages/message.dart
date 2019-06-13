@@ -105,7 +105,7 @@ class _MessageState extends State<Message> {
             actionExtentRatio: 0.25,
             child: new Container(
               decoration: BoxDecoration(
-                border: Border(bottom: BorderSide(color: Color(0xFFD6D6D6), width: 1)),
+                border: Border(bottom: BorderSide(color: Color(0xFFD6D6D6), width: ScreenUtil.getInstance().setWidth(1))),
                 color: Colors.white,
               ),
               child: new ListTile(

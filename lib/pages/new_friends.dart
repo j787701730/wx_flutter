@@ -68,7 +68,7 @@ class _NewFriendsState extends State<NewFriends> with WidgetsBindingObserver {
               height: ScreenUtil.getInstance().setHeight(56.0),
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border: Border.all(color: Color(0xffD9D9DB)),
+                  border: Border.all(color: Color(0xffD9D9DB),width: ScreenUtil.getInstance().setWidth(1)),
                   borderRadius: BorderRadius.all(Radius.circular(ScreenUtil.getInstance().setWidth(6.0)))),
               child: Stack(
                 children: <Widget>[
@@ -135,7 +135,7 @@ class _NewFriendsState extends State<NewFriends> with WidgetsBindingObserver {
                           actionExtentRatio: 0.25,
                           child: new Container(
                             decoration: BoxDecoration(
-                              border: Border(bottom: BorderSide(color: Color(0xFFD6D6D6), width: 1)),
+                              border: Border(bottom: BorderSide(color: Color(0xFFD6D6D6),width: ScreenUtil.getInstance().setWidth(1))),
                               color: Colors.white,
                             ),
                             child: InkWell(
