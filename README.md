@@ -16,3 +16,4 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 # 图例
 ![image](https://github.com/j787701730/wx_flutter/blob/master/message.png)
+![image](https://github.com/j787701730/wx_flutter/blob/master/contacts.png)
