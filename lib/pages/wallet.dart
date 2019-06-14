@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'balance.dart';
 import 'money.dart';
+import 'cards.dart';
 
 class Wallet extends StatefulWidget {
   @override
@@ -218,18 +219,26 @@ class _WalletState extends State<Wallet> with WidgetsBindingObserver {
                 ),
                 Expanded(
                   flex: 1,
-                  child: Column(
-                    children: <Widget>[
-                      Icon(
-                        Icons.credit_card,
-                        color: Colors.white,
-                        size: ScreenUtil.getInstance().setSp(70.0),
-                      ),
-                      Text(
-                        '银行卡',
-                        style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getInstance().setSp(28.0)),
-                      )
-                    ],
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        new MaterialPageRoute(builder: (context) => new Cards()),
+                      );
+                    },
+                    child: Column(
+                      children: <Widget>[
+                        Icon(
+                          Icons.credit_card,
+                          color: Colors.white,
+                          size: ScreenUtil.getInstance().setSp(70.0),
+                        ),
+                        Text(
+                          '银行卡',
+                          style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getInstance().setSp(28.0)),
+                        )
+                      ],
+                    ),
                   ),
                 )
               ],
@@ -292,7 +301,10 @@ class _WalletState extends State<Wallet> with WidgetsBindingObserver {
                           style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(22.0)),
                         ),
                         decoration: BoxDecoration(
-                            border: Border(bottom: BorderSide(color: Color(0xffE0E0E0),width: ScreenUtil.getInstance().setWidth(1))), color: Colors.white),
+                            border: Border(
+                                bottom:
+                                    BorderSide(color: Color(0xffE0E0E0), width: ScreenUtil.getInstance().setWidth(1))),
+                            color: Colors.white),
                       ),
                       Wrap(
                         children: item['list'].map<Widget>((list) {
@@ -305,11 +317,14 @@ class _WalletState extends State<Wallet> with WidgetsBindingObserver {
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 border: Border(
-                                    left: BorderSide(color: Colors.white,width: ScreenUtil.getInstance().setWidth(1)),
-                                    bottom: BorderSide(color: Color(0xffE0E0E0),width: ScreenUtil.getInstance().setWidth(1)),
+                                    left: BorderSide(color: Colors.white, width: ScreenUtil.getInstance().setWidth(1)),
+                                    bottom: BorderSide(
+                                        color: Color(0xffE0E0E0), width: ScreenUtil.getInstance().setWidth(1)),
                                     right: (item['list'].indexOf(list) % 3 == 0 || item['list'].indexOf(list) % 3 == 1)
-                                        ? BorderSide(color: Color(0xffE0E0E0),width: ScreenUtil.getInstance().setWidth(1))
-                                        : BorderSide(color: Colors.white,width: ScreenUtil.getInstance().setWidth(1)))),
+                                        ? BorderSide(
+                                            color: Color(0xffE0E0E0), width: ScreenUtil.getInstance().setWidth(1))
+                                        : BorderSide(
+                                            color: Colors.white, width: ScreenUtil.getInstance().setWidth(1)))),
                             child: Column(
                               children: <Widget>[
                                 list['icon'],
