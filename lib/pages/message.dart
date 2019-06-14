@@ -47,16 +47,16 @@ class _MessageState extends State<Message> {
   }
 
   List list = [
-    {'pic': 'images/li.jpg', 'name': '李'},
-    {'pic': 'images/wu.jpg', 'name': '吴'},
-    {'pic': 'images/chen.jpg', 'name': '陈'},
-    {'pic': 'images/pan.jpg', 'name': '潘'},
-    {'pic': 'images/yu.jpg', 'name': '余'},
-    {'pic': 'images/li.jpg', 'name': '李'},
-    {'pic': 'images/wu.jpg', 'name': '吴'},
-    {'pic': 'images/chen.jpg', 'name': '陈'},
-    {'pic': 'images/pan.jpg', 'name': '潘'},
-    {'pic': 'images/yu.jpg', 'name': '余'},
+    {'pic': 'images/li.jpg', 'name': '李', 'num': 3},
+    {'pic': 'images/wu.jpg', 'name': '吴', 'num': 0},
+    {'pic': 'images/chen.jpg', 'name': '陈', 'num': 0},
+    {'pic': 'images/pan.jpg', 'name': '潘', 'num': 0},
+    {'pic': 'images/yu.jpg', 'name': '余', 'num': 3000},
+    {'pic': 'images/li.jpg', 'name': '李', 'num': 0},
+    {'pic': 'images/wu.jpg', 'name': '吴', 'num': 0},
+    {'pic': 'images/chen.jpg', 'name': '陈', 'num': 0},
+    {'pic': 'images/pan.jpg', 'name': '潘', 'num': 0},
+    {'pic': 'images/yu.jpg', 'name': '余', 'num': 0},
   ];
 
   _showSnackBar(action) {}
@@ -105,40 +105,16 @@ class _MessageState extends State<Message> {
             actionExtentRatio: 0.25,
             child: new Container(
               decoration: BoxDecoration(
-                border: Border(bottom: BorderSide(color: Color(0xFFD6D6D6), width: ScreenUtil.getInstance().setWidth(1))),
+                border:
+                    Border(bottom: BorderSide(color: Color(0xffD9D9D9), width: ScreenUtil.getInstance().setWidth(1))),
                 color: Colors.white,
               ),
-              child: new ListTile(
-//                leading: new CircleAvatar(
-//                  backgroundColor: Colors.indigoAccent,
-//                  child: new Text('3'),
-//                  foregroundColor: Colors.white,
-//                ),
-                contentPadding: EdgeInsets.only(
-                    left: ScreenUtil.getInstance().setWidth(20), right: ScreenUtil.getInstance().setWidth(20)),
-                leading: Image.asset(item['pic']),
-                title: Container(
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: Container(
-                          child: new Text(
-                            item['name'],
-                            style: TextStyle(color: Colors.black, fontSize: ScreenUtil.getInstance().setSp(30.0)),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: ScreenUtil.getInstance().setWidth(26 / 2 * 5),
-                        child: Text(
-                          '17:50',
-                          style: TextStyle(color: Color(0xFFB2B2B2), fontSize: ScreenUtil.getInstance().setSp(24.0)),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                subtitle: new Text('${item['name']}是个天才'),
+              padding: EdgeInsets.only(
+                left: ScreenUtil.getInstance().setWidth(20.0),
+                right: ScreenUtil.getInstance().setWidth(20.0),
+                bottom: ScreenUtil.getInstance().setHeight(20.0),
+              ),
+              child: InkWell(
                 onTap: () {
 //                  Routes.router.navigateTo(context, 'messageDetail',transition: TransitionType.inFromRight);
                   Navigator.push(
@@ -146,6 +122,89 @@ class _MessageState extends State<Message> {
                     new MaterialPageRoute(builder: (context) => new MessageDetail({'name': item['name']})),
                   );
                 },
+                child: Row(
+                  children: <Widget>[
+                    Container(
+                      width: ScreenUtil.getInstance().setWidth(92.0),
+                      height: ScreenUtil.getInstance().setHeight(92.0),
+//                      padding: EdgeInsets.only(
+//                        top: ScreenUtil.getInstance().setHeight(20.0),
+//                      ),
+                      child: Stack(
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(20.0)),
+                            child: Image.asset(
+                              item['pic'],
+                              width: ScreenUtil.getInstance().setWidth(72.0),
+                              height: ScreenUtil.getInstance().setHeight(72.0),
+                            ),
+                          ),
+                          '${item['num']}' != '0'
+                              ? Positioned(
+                                  right: ScreenUtil.getInstance().setHeight(6.0),
+                                  top: ScreenUtil.getInstance().setHeight(6.0),
+                                  child: Container(
+                                    width: ScreenUtil.getInstance().setWidth(36.0),
+                                    height: ScreenUtil.getInstance().setWidth(36.0),
+                                    padding: EdgeInsets.all(5.0),
+                                    decoration: BoxDecoration(
+                                        color: Color(0xffF43531),
+                                        borderRadius:
+                                            BorderRadius.all(Radius.circular(ScreenUtil.getInstance().setWidth(36.0)))),
+                                    child: Center(
+                                      child: Text(
+                                        '${item['num']}',
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: ScreenUtil.getInstance().setSp(18.0)),
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                  ))
+                              : Placeholder(
+                                  fallbackWidth: 0,
+                                  fallbackHeight: 0,
+                                  color: Colors.transparent,
+                                )
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                        child: Container(
+                      padding: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(20.0)),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Row(
+                            children: <Widget>[
+                              Expanded(
+                                  child: Text(
+                                item['name'],
+                                style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(28.0)),
+                              )),
+                              Container(
+                                width: ScreenUtil.getInstance().setWidth(26 / 2 * 5),
+                                child: Text(
+                                  '17:50',
+                                  textAlign: TextAlign.end,
+                                  style: TextStyle(
+                                      color: Color(0xFFB2B2B2), fontSize: ScreenUtil.getInstance().setSp(24.0)),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Text(
+                            '${item['name']}是个天才',
+                            style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(24.0), color: Color(0xffB2B2B2)),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          )
+                        ],
+                      ),
+                    )),
+                  ],
+                ),
               ),
             ),
 //            actions: <Widget>[
