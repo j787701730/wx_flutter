@@ -103,25 +103,25 @@ class _MessageState extends State<Message> {
           return Slidable(
             delegate: new SlidableDrawerDelegate(),
             actionExtentRatio: 0.25,
-            child: new Container(
-              decoration: BoxDecoration(
-                border:
-                    Border(bottom: BorderSide(color: Color(0xffD9D9D9), width: ScreenUtil.getInstance().setWidth(1))),
-                color: Colors.white,
-              ),
-              padding: EdgeInsets.only(
-                left: ScreenUtil.getInstance().setWidth(20.0),
-                right: ScreenUtil.getInstance().setWidth(20.0),
-                bottom: ScreenUtil.getInstance().setHeight(20.0),
-              ),
-              child: InkWell(
-                onTap: () {
+            child: InkWell(
+              onTap: () {
 //                  Routes.router.navigateTo(context, 'messageDetail',transition: TransitionType.inFromRight);
-                  Navigator.push(
-                    context,
-                    new MaterialPageRoute(builder: (context) => new MessageDetail({'name': item['name']})),
-                  );
-                },
+                Navigator.push(
+                  context,
+                  new MaterialPageRoute(builder: (context) => new MessageDetail({'name': item['name']})),
+                );
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  border:
+                      Border(bottom: BorderSide(color: Color(0xffD9D9D9), width: ScreenUtil.getInstance().setWidth(1))),
+                  color: Colors.white,
+                ),
+                padding: EdgeInsets.only(
+                  left: ScreenUtil.getInstance().setWidth(20.0),
+                  right: ScreenUtil.getInstance().setWidth(20.0),
+                  bottom: ScreenUtil.getInstance().setHeight(20.0),
+                ),
                 child: Row(
                   children: <Widget>[
                     Container(

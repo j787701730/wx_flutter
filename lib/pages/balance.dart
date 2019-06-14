@@ -80,6 +80,7 @@ class _BalanceState extends State<Balance> {
               ),
               child: RaisedButton(
                 onPressed: () {},
+                elevation: 1,
                 child: Text(
                   '充值',
                   style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(34.0)),
