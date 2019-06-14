@@ -15,5 +15,4 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials, 
 samples, guidance on mobile development, and a full API reference.
 # 图例
-![image](https://github.com/j787701730/wx_flutter/blob/master/message.png)
-![image](https://github.com/j787701730/wx_flutter/blob/master/contacts.png)
+<img alt="S-anasol" src="https://github.com/j787701730/wx_flutter/blob/master/message.png" width="400" style="max-width:100%;"><img alt="S-anasol" src="https://github.com/j787701730/wx_flutter/blob/master/contacts.png" width="400" style="max-width:100%;">
