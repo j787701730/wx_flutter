@@ -6,6 +6,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 //import '../routes.dart';
 import 'message_detail.dart';
 import 'wx_scan.dart';
+import 'subscription_account.dart';
 
 class Message extends StatefulWidget {
   @override
@@ -69,15 +70,12 @@ class _MessageState extends State<Message> {
         title: Text('微信'),
         centerTitle: true,
         actions: <Widget>[
-          InkWell(
-            child: Container(
-              width: 40,
-              child: Icon(
+          IconButton(
+            icon: Icon(
                 Icons.add,
                 size: 30,
               ),
-            ),
-            onTap: () {
+            onPressed: () {
               showMenu(
                 context: context,
                 position: RelativeRect.fromLTRB(700.0, 86.0, 10.0, 0.0),
@@ -93,14 +91,11 @@ class _MessageState extends State<Message> {
               );
             },
           ),
-          Container(
-            width: 10,
-          )
         ],
       ),
       body: ListView(
-        children: list.map<Widget>((item) {
-          return Slidable(
+        children: <Widget>[
+          Slidable(
             delegate: new SlidableDrawerDelegate(),
             actionExtentRatio: 0.25,
             child: InkWell(
@@ -108,13 +103,12 @@ class _MessageState extends State<Message> {
 //                  Routes.router.navigateTo(context, 'messageDetail',transition: TransitionType.inFromRight);
                 Navigator.push(
                   context,
-                  new MaterialPageRoute(builder: (context) => new MessageDetail({'name': item['name']})),
+                  new MaterialPageRoute(builder: (context) => new SubscriptionAccount()),
                 );
               },
               child: Container(
                 decoration: BoxDecoration(
-                  border:
-                      Border(bottom: BorderSide(color: Color(0xffD9D9D9), width: ScreenUtil.getInstance().setWidth(1))),
+                  border: Border(bottom: BorderSide(color: Color(0xffD9D9D9), width: ScreenUtil.getInstance().setWidth(1))),
                   color: Colors.white,
                 ),
                 padding: EdgeInsets.only(
@@ -135,12 +129,13 @@ class _MessageState extends State<Message> {
                           Container(
                             margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(20.0)),
                             child: Image.asset(
-                              item['pic'],
+                              'images/dingyuehao.png',
                               width: ScreenUtil.getInstance().setWidth(72.0),
                               height: ScreenUtil.getInstance().setHeight(72.0),
+                              fit: BoxFit.fitWidth,
                             ),
                           ),
-                          '${item['num']}' != '0'
+                          '0' != '0'
                               ? Positioned(
                                   right: ScreenUtil.getInstance().setHeight(6.0),
                                   top: ScreenUtil.getInstance().setHeight(6.0),
@@ -150,13 +145,11 @@ class _MessageState extends State<Message> {
                                     padding: EdgeInsets.all(5.0),
                                     decoration: BoxDecoration(
                                         color: Color(0xffF43531),
-                                        borderRadius:
-                                            BorderRadius.all(Radius.circular(ScreenUtil.getInstance().setWidth(36.0)))),
+                                        borderRadius: BorderRadius.all(Radius.circular(ScreenUtil.getInstance().setWidth(36.0)))),
                                     child: Center(
                                       child: Text(
-                                        '${item['num']}',
-                                        style: TextStyle(
-                                            color: Colors.white, fontSize: ScreenUtil.getInstance().setSp(18.0)),
+                                        '0',
+                                        style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getInstance().setSp(18.0)),
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,
                                       ),
@@ -180,7 +173,7 @@ class _MessageState extends State<Message> {
                             children: <Widget>[
                               Expanded(
                                   child: Text(
-                                item['name'],
+                                '订阅号信息',
                                 style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(28.0)),
                               )),
                               Container(
@@ -188,14 +181,13 @@ class _MessageState extends State<Message> {
                                 child: Text(
                                   '17:50',
                                   textAlign: TextAlign.end,
-                                  style: TextStyle(
-                                      color: Color(0xFFB2B2B2), fontSize: ScreenUtil.getInstance().setSp(24.0)),
+                                  style: TextStyle(color: Color(0xFFB2B2B2), fontSize: ScreenUtil.getInstance().setSp(24.0)),
                                 ),
                               ),
                             ],
                           ),
                           Text(
-                            '${item['name']}是个天才',
+                            '是个天才',
                             style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(24.0), color: Color(0xffB2B2B2)),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
@@ -207,20 +199,6 @@ class _MessageState extends State<Message> {
                 ),
               ),
             ),
-//            actions: <Widget>[
-//              new IconSlideAction(
-//                caption: 'Archive',
-//                color: Colors.blue,
-//                icon: Icons.archive,
-//                onTap: () => _showSnackBar('Archive'),
-//              ),
-//              new IconSlideAction(
-//                caption: 'Share',
-//                color: Colors.indigo,
-//                icon: Icons.share,
-//                onTap: () => _showSnackBar('Share'),
-//              ),
-//            ],
             secondaryActions: <Widget>[
               new IconSlideAction(
                 caption: '标记已读',
@@ -235,8 +213,144 @@ class _MessageState extends State<Message> {
                 onTap: () => _showSnackBar('Delete'),
               ),
             ],
-          );
-        }).toList(),
+          ),
+          Column(
+            children: list.map<Widget>((item) {
+              return Slidable(
+                delegate: new SlidableDrawerDelegate(),
+                actionExtentRatio: 0.25,
+                child: InkWell(
+                  onTap: () {
+//                  Routes.router.navigateTo(context, 'messageDetail',transition: TransitionType.inFromRight);
+                    Navigator.push(
+                      context,
+                      new MaterialPageRoute(builder: (context) => new MessageDetail({'name': item['name']})),
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border(bottom: BorderSide(color: Color(0xffD9D9D9), width: ScreenUtil.getInstance().setWidth(1))),
+                      color: Colors.white,
+                    ),
+                    padding: EdgeInsets.only(
+                      left: ScreenUtil.getInstance().setWidth(20.0),
+                      right: ScreenUtil.getInstance().setWidth(20.0),
+                      bottom: ScreenUtil.getInstance().setHeight(20.0),
+                    ),
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          width: ScreenUtil.getInstance().setWidth(92.0),
+                          height: ScreenUtil.getInstance().setHeight(92.0),
+//                      padding: EdgeInsets.only(
+//                        top: ScreenUtil.getInstance().setHeight(20.0),
+//                      ),
+                          child: Stack(
+                            children: <Widget>[
+                              Container(
+                                margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(20.0)),
+                                child: Image.asset(
+                                  item['pic'],
+                                  width: ScreenUtil.getInstance().setWidth(72.0),
+                                  height: ScreenUtil.getInstance().setHeight(72.0),
+                                ),
+                              ),
+                              '${item['num']}' != '0'
+                                  ? Positioned(
+                                      right: ScreenUtil.getInstance().setHeight(6.0),
+                                      top: ScreenUtil.getInstance().setHeight(6.0),
+                                      child: Container(
+                                        width: ScreenUtil.getInstance().setWidth(36.0),
+                                        height: ScreenUtil.getInstance().setWidth(36.0),
+                                        padding: EdgeInsets.all(5.0),
+                                        decoration: BoxDecoration(
+                                            color: Color(0xffF43531),
+                                            borderRadius: BorderRadius.all(Radius.circular(ScreenUtil.getInstance().setWidth(36.0)))),
+                                        child: Center(
+                                          child: Text(
+                                            '${item['num']}',
+                                            style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getInstance().setSp(18.0)),
+                                            maxLines: 1,
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                        ),
+                                      ))
+                                  : Placeholder(
+                                      fallbackWidth: 0,
+                                      fallbackHeight: 0,
+                                      color: Colors.transparent,
+                                    )
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                            child: Container(
+                          padding: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(20.0)),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Row(
+                                children: <Widget>[
+                                  Expanded(
+                                      child: Text(
+                                    item['name'],
+                                    style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(28.0)),
+                                  )),
+                                  Container(
+                                    width: ScreenUtil.getInstance().setWidth(26 / 2 * 5),
+                                    child: Text(
+                                      '17:50',
+                                      textAlign: TextAlign.end,
+                                      style: TextStyle(color: Color(0xFFB2B2B2), fontSize: ScreenUtil.getInstance().setSp(24.0)),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Text(
+                                '${item['name']}是个天才',
+                                style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(24.0), color: Color(0xffB2B2B2)),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              )
+                            ],
+                          ),
+                        )),
+                      ],
+                    ),
+                  ),
+                ),
+//            actions: <Widget>[
+//              new IconSlideAction(
+//                caption: 'Archive',
+//                color: Colors.blue,
+//                icon: Icons.archive,
+//                onTap: () => _showSnackBar('Archive'),
+//              ),
+//              new IconSlideAction(
+//                caption: 'Share',
+//                color: Colors.indigo,
+//                icon: Icons.share,
+//                onTap: () => _showSnackBar('Share'),
+//              ),
+//            ],
+                secondaryActions: <Widget>[
+                  new IconSlideAction(
+                    caption: '标记已读',
+                    color: Colors.black45,
+                    icon: Icons.more_horiz,
+                    onTap: () => _showSnackBar('More'),
+                  ),
+                  new IconSlideAction(
+                    caption: '删除',
+                    color: Colors.red,
+                    icon: Icons.delete,
+                    onTap: () => _showSnackBar('Delete'),
+                  ),
+                ],
+              );
+            }).toList(),
+          )
+        ],
       ),
     );
   }

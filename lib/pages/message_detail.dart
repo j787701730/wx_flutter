@@ -64,33 +64,25 @@ class _MessageDetailState extends State<MessageDetail> {
         title: Text('${widget.props['name']}'),
         centerTitle: true,
         actions: <Widget>[
-          InkWell(
-            child: Container(
-              width: 40,
-              child: Icon(
-                Icons.more_horiz,
-                size: 30,
-              ),
+          IconButton(
+            icon: Icon(
+              Icons.more_horiz,
+              size: 30,
             ),
-            onTap: () {
+            onPressed: () {
               Navigator.push(
                 context,
                 new MaterialPageRoute(builder: (context) => new ChatDetail()),
               );
             },
           ),
-          Container(
-            width: 10,
-          )
         ],
       ),
       body: Column(
         children: <Widget>[
           Container(
-            height: MediaQuery.of(context).size.height -
-                56 -
-                MediaQuery.of(context).padding.top -
-                ScreenUtil.getInstance().setHeight(100.0),
+            height:
+                MediaQuery.of(context).size.height - 56 - MediaQuery.of(context).padding.top - ScreenUtil.getInstance().setHeight(100.0),
             color: Color(0xEBEBEB),
             child: ListView(
               reverse: true,
@@ -120,8 +112,7 @@ class _MessageDetailState extends State<MessageDetail> {
                                           bottom: ScreenUtil.getInstance().setWidth(24.0)),
                                       margin: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(20.0)),
                                       decoration: BoxDecoration(
-                                          border: Border.all(
-                                              color: Color(0xffCCCCCC), width: ScreenUtil.getInstance().setWidth(1)),
+                                          border: Border.all(color: Color(0xffCCCCCC), width: ScreenUtil.getInstance().setWidth(1)),
                                           color: Colors.white,
                                           borderRadius: BorderRadius.all(Radius.circular(6))),
                                       child: Text(item['to']),
@@ -143,8 +134,7 @@ class _MessageDetailState extends State<MessageDetail> {
                                           bottom: ScreenUtil.getInstance().setWidth(24.0)),
                                       margin: EdgeInsets.only(right: ScreenUtil.getInstance().setWidth(20.0)),
                                       decoration: BoxDecoration(
-                                          border: Border.all(
-                                              color: Color(0xff6FB54D), width: ScreenUtil.getInstance().setWidth(1)),
+                                          border: Border.all(color: Color(0xff6FB54D), width: ScreenUtil.getInstance().setWidth(1)),
                                           color: Color(0xffA0E75A),
                                           borderRadius: BorderRadius.all(Radius.circular(6))),
                                       child: Text(item['from']),
@@ -162,8 +152,7 @@ class _MessageDetailState extends State<MessageDetail> {
                         margin: EdgeInsets.only(bottom: ScreenUtil.getInstance().setHeight(28.0)),
                         child: Center(
                           child: Container(
-                            decoration: BoxDecoration(
-                                color: Color(0xffCFCFCF), borderRadius: BorderRadius.all(Radius.circular(8))),
+                            decoration: BoxDecoration(color: Color(0xffCFCFCF), borderRadius: BorderRadius.all(Radius.circular(8))),
                             width: ScreenUtil.getInstance().setWidth(80.0),
                             height: ScreenUtil.getInstance().setHeight(40.0),
                             child: Center(

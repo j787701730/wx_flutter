@@ -13,7 +13,7 @@ void main() {
 //        primarySwatch: Colors.blue,
         primaryColor: Color(0xff303030),
         scaffoldBackgroundColor: Color(0xFFebebeb),
-        cardColor: Color(0xff393a3f),
+        cardColor: Colors.white,
         platform: TargetPlatform.iOS),
     home: SplashPage(),
 //      onGenerateRoute: Routes.router.generator

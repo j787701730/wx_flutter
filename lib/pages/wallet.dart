@@ -20,101 +20,29 @@ class _WalletState extends State<Wallet> with WidgetsBindingObserver {
     {
       'type': '腾讯服务',
       'list': [
-        {
-          'id': '',
-          'name': '信用卡还款',
-          'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))
-        },
-        {
-          'id': '',
-          'name': '信用卡还款',
-          'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))
-        },
-        {
-          'id': '',
-          'name': '信用卡还款',
-          'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))
-        },
-        {
-          'id': '',
-          'name': '信用卡还款',
-          'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))
-        },
-        {
-          'id': '',
-          'name': '信用卡还款',
-          'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))
-        },
-        {
-          'id': '',
-          'name': '信用卡还款',
-          'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))
-        },
-        {
-          'id': '',
-          'name': '信用卡还款',
-          'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))
-        },
-        {
-          'id': '',
-          'name': '信用卡还款',
-          'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))
-        },
-        {
-          'id': '',
-          'name': '信用卡还款',
-          'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))
-        },
+        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
+        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
+        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
+        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
+        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
+        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
+        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
+        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
+        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
       ]
     },
     {
       'type': '第三方服务',
       'list': [
-        {
-          'id': '',
-          'name': '信用卡还款',
-          'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))
-        },
-        {
-          'id': '',
-          'name': '信用卡还款',
-          'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))
-        },
-        {
-          'id': '',
-          'name': '信用卡还款',
-          'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))
-        },
-        {
-          'id': '',
-          'name': '信用卡还款',
-          'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))
-        },
-        {
-          'id': '',
-          'name': '信用卡还款',
-          'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))
-        },
-        {
-          'id': '',
-          'name': '信用卡还款',
-          'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))
-        },
-        {
-          'id': '',
-          'name': '信用卡还款',
-          'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))
-        },
-        {
-          'id': '',
-          'name': '信用卡还款',
-          'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))
-        },
-        {
-          'id': '',
-          'name': '信用卡还款',
-          'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))
-        },
+        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
+        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
+        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
+        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
+        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
+        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
+        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
+        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
+        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
       ]
     }
   ];
@@ -125,15 +53,11 @@ class _WalletState extends State<Wallet> with WidgetsBindingObserver {
       SliverAppBar(
         title: Text('钱包'),
         actions: <Widget>[
-          InkWell(
-            child: Container(
-              width: 40,
-              child: Icon(
-                Icons.border_all,
-                size: 30,
-              ),
+          IconButton(
+            icon: Icon(
+              Icons.border_all,
             ),
-            onTap: () {
+            onPressed: () {
 //            Navigator.push(
 //              context,
 //              new MaterialPageRoute(builder: (context) => new ChatDetail()),
@@ -301,9 +225,7 @@ class _WalletState extends State<Wallet> with WidgetsBindingObserver {
                           style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(22.0)),
                         ),
                         decoration: BoxDecoration(
-                            border: Border(
-                                bottom:
-                                    BorderSide(color: Color(0xffE0E0E0), width: ScreenUtil.getInstance().setWidth(1))),
+                            border: Border(bottom: BorderSide(color: Color(0xffE0E0E0), width: ScreenUtil.getInstance().setWidth(1))),
                             color: Colors.white),
                       ),
                       Wrap(
@@ -318,13 +240,10 @@ class _WalletState extends State<Wallet> with WidgetsBindingObserver {
                                 color: Colors.white,
                                 border: Border(
                                     left: BorderSide(color: Colors.white, width: ScreenUtil.getInstance().setWidth(1)),
-                                    bottom: BorderSide(
-                                        color: Color(0xffE0E0E0), width: ScreenUtil.getInstance().setWidth(1)),
+                                    bottom: BorderSide(color: Color(0xffE0E0E0), width: ScreenUtil.getInstance().setWidth(1)),
                                     right: (item['list'].indexOf(list) % 3 == 0 || item['list'].indexOf(list) % 3 == 1)
-                                        ? BorderSide(
-                                            color: Color(0xffE0E0E0), width: ScreenUtil.getInstance().setWidth(1))
-                                        : BorderSide(
-                                            color: Colors.white, width: ScreenUtil.getInstance().setWidth(1)))),
+                                        ? BorderSide(color: Color(0xffE0E0E0), width: ScreenUtil.getInstance().setWidth(1))
+                                        : BorderSide(color: Colors.white, width: ScreenUtil.getInstance().setWidth(1)))),
                             child: Column(
                               children: <Widget>[
                                 list['icon'],

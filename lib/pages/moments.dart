@@ -20,28 +20,17 @@ class _MomentsState extends State<Moments> with WidgetsBindingObserver {
         title: Text(show ? '朋友圈' : ''),
         elevation: 0,
         actions: <Widget>[
-          InkWell(
-            child: Container(
-              width: 40,
-              child: Icon(
-                Icons.camera_alt,
-                size: 30,
-              ),
+          IconButton(
+            icon: Icon(
+              Icons.camera_alt,
             ),
-            onTap: () {
-//            Navigator.push(
-//              context,
-//              new MaterialPageRoute(builder: (context) => new ChatDetail()),
-//            );
-            },
+            onPressed: () {},
           )
         ],
         //标题居中
         centerTitle: true,
         //展开高度200
-        expandedHeight: MediaQuery.of(context).size.width -
-            MediaQuery.of(context).padding.top +
-            ScreenUtil.getInstance().setHeight(48.0),
+        expandedHeight: MediaQuery.of(context).size.width - MediaQuery.of(context).padding.top + ScreenUtil.getInstance().setHeight(48.0),
         //不随着滑动隐藏标题
         floating: true,
         //固定在顶部
@@ -53,9 +42,7 @@ class _MomentsState extends State<Moments> with WidgetsBindingObserver {
           collapseMode: CollapseMode.pin,
           background: Container(
             color: Colors.white,
-            height: MediaQuery.of(context).size.width -
-                MediaQuery.of(context).padding.top +
-                ScreenUtil.getInstance().setHeight(48.0),
+            height: MediaQuery.of(context).size.width - MediaQuery.of(context).padding.top + ScreenUtil.getInstance().setHeight(48.0),
             child: Stack(
               children: <Widget>[
                 Positioned(
@@ -82,7 +69,8 @@ class _MomentsState extends State<Moments> with WidgetsBindingObserver {
                       Container(
                         width: ScreenUtil.getInstance().setWidth(150.0),
                         height: ScreenUtil.getInstance().setHeight(150.0),
-                        decoration: BoxDecoration(border: Border.all(color: Color(0xffcccccc),width: ScreenUtil.getInstance().setWidth(1))),
+                        decoration:
+                            BoxDecoration(border: Border.all(color: Color(0xffcccccc), width: ScreenUtil.getInstance().setWidth(1))),
                         child: Image.asset(
                           'images/yu.jpg',
                         ),
@@ -168,8 +156,7 @@ class _MomentsState extends State<Moments> with WidgetsBindingObserver {
           body: Container(
             color: Colors.white,
             child: ListView(
-              padding: EdgeInsets.only(
-                  top: ScreenUtil.getInstance().setWidth(18.0), left: ScreenUtil.getInstance().setWidth(18.0)),
+              padding: EdgeInsets.only(top: ScreenUtil.getInstance().setWidth(18.0), left: ScreenUtil.getInstance().setWidth(18.0)),
               children: arr.map<Widget>((item) {
                 return Container(
                   child: Row(
@@ -184,15 +171,13 @@ class _MomentsState extends State<Moments> with WidgetsBindingObserver {
                       Expanded(
                         child: Container(
                           padding: EdgeInsets.only(
-                              left: ScreenUtil.getInstance().setWidth(18.0),
-                              right: ScreenUtil.getInstance().setWidth(18.0)),
+                              left: ScreenUtil.getInstance().setWidth(18.0), right: ScreenUtil.getInstance().setWidth(18.0)),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
                                 '${item['name']}',
-                                style:
-                                    TextStyle(color: Color(0xff576B95), fontSize: ScreenUtil.getInstance().setSp(28.0)),
+                                style: TextStyle(color: Color(0xff576B95), fontSize: ScreenUtil.getInstance().setSp(28.0)),
                               ),
                               Container(
                                 height: ScreenUtil.getInstance().setHeight(18.0),
@@ -212,16 +197,14 @@ class _MomentsState extends State<Moments> with WidgetsBindingObserver {
                                       children: <Widget>[
                                         Text(
                                           '2分钟前',
-                                          style: TextStyle(
-                                              fontSize: ScreenUtil.getInstance().setSp(24.0), color: Color(0xff737373)),
+                                          style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(24.0), color: Color(0xff737373)),
                                         ),
                                         Container(
                                           width: ScreenUtil.getInstance().setWidth(20.0),
                                         ),
                                         Text(
                                           'UC浏览器',
-                                          style: TextStyle(
-                                              fontSize: ScreenUtil.getInstance().setSp(24.0), color: Color(0xff737373)),
+                                          style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(24.0), color: Color(0xff737373)),
                                         )
                                       ],
                                     ),
@@ -243,7 +226,7 @@ class _MomentsState extends State<Moments> with WidgetsBindingObserver {
                                 margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(10.0)),
                                 decoration: BoxDecoration(
                                   color: Color(0xffF4F4F6),
-                                  border: Border(bottom: BorderSide(color: Color(0xffDDDEDF),width: ScreenUtil.getInstance().setWidth(1))),
+                                  border: Border(bottom: BorderSide(color: Color(0xffDDDEDF), width: ScreenUtil.getInstance().setWidth(1))),
                                 ),
                                 padding: EdgeInsets.only(
                                     left: ScreenUtil.getInstance().setWidth(20.0),
@@ -265,9 +248,7 @@ class _MomentsState extends State<Moments> with WidgetsBindingObserver {
                                           ),
                                           Text(
                                             '简单快乐',
-                                            style: TextStyle(
-                                                color: Color(0xff7081A5),
-                                                fontSize: ScreenUtil.getInstance().setSp(26.0)),
+                                            style: TextStyle(color: Color(0xff7081A5), fontSize: ScreenUtil.getInstance().setSp(26.0)),
                                           ),
                                           Container(
                                             width: ScreenUtil.getInstance().setWidth(12.0),
@@ -294,9 +275,7 @@ class _MomentsState extends State<Moments> with WidgetsBindingObserver {
                                         children: <Widget>[
                                           Text(
                                             '简单快乐',
-                                            style: TextStyle(
-                                                color: Color(0xff7081A5),
-                                                fontSize: ScreenUtil.getInstance().setSp(26.0)),
+                                            style: TextStyle(color: Color(0xff7081A5), fontSize: ScreenUtil.getInstance().setSp(26.0)),
                                           ),
                                           Text('：我要小姐姐')
                                         ],

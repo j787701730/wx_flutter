@@ -84,21 +84,18 @@ class _ContactsState extends State<Contacts> {
       appBar: AppBar(
         title: Text('通讯录'),
         actions: <Widget>[
-          Container(
-            width: 40,
-            child: InkWell(
-              child: Icon(
-                Icons.person_add,
-                size: 30,
-              ),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  new MaterialPageRoute(builder: (context) => new AddContacts()),
-                );
-              },
+          IconButton(
+            icon: Icon(
+              Icons.person_add,
+              size: 30,
             ),
-          )
+            onPressed: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(builder: (context) => new AddContacts()),
+              );
+            },
+          ),
         ],
       ),
       body: Stack(
@@ -126,12 +123,10 @@ class _ContactsState extends State<Contacts> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
-                              Icon(Icons.search,
-                                  size: ScreenUtil.getInstance().setWidth(44.0), color: Color(0xffC5C5C5)),
+                              Icon(Icons.search, size: ScreenUtil.getInstance().setWidth(44.0), color: Color(0xffC5C5C5)),
                               Text(
                                 '搜索',
-                                style:
-                                    TextStyle(fontSize: ScreenUtil.getInstance().setSp(26.0), color: Color(0xffC5C5C5)),
+                                style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(26.0), color: Color(0xffC5C5C5)),
                               )
                             ],
                           ),
@@ -151,8 +146,7 @@ class _ContactsState extends State<Contacts> {
                 Container(
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      border: Border(
-                          bottom: BorderSide(color: Color(0xffD7D7D7), width: ScreenUtil.getInstance().setWidth(1)))),
+                      border: Border(bottom: BorderSide(color: Color(0xffD7D7D7), width: ScreenUtil.getInstance().setWidth(1)))),
                   padding: EdgeInsets.only(
                       left: ScreenUtil.getInstance().setWidth(20.0),
                       top: ScreenUtil.getInstance().setWidth(20.0),
@@ -185,8 +179,7 @@ class _ContactsState extends State<Contacts> {
                 Container(
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      border: Border(
-                          bottom: BorderSide(color: Color(0xffD7D7D7), width: ScreenUtil.getInstance().setWidth(1)))),
+                      border: Border(bottom: BorderSide(color: Color(0xffD7D7D7), width: ScreenUtil.getInstance().setWidth(1)))),
                   padding: EdgeInsets.only(
                       left: ScreenUtil.getInstance().setWidth(20.0),
                       top: ScreenUtil.getInstance().setWidth(20.0),
@@ -219,8 +212,7 @@ class _ContactsState extends State<Contacts> {
                 Container(
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      border: Border(
-                          bottom: BorderSide(color: Color(0xffD7D7D7), width: ScreenUtil.getInstance().setWidth(1)))),
+                      border: Border(bottom: BorderSide(color: Color(0xffD7D7D7), width: ScreenUtil.getInstance().setWidth(1)))),
                   padding: EdgeInsets.only(
                       left: ScreenUtil.getInstance().setWidth(20.0),
                       top: ScreenUtil.getInstance().setWidth(20.0),
@@ -325,9 +317,8 @@ class _ContactsState extends State<Contacts> {
                             return Container(
                               decoration: BoxDecoration(
                                   color: Colors.white,
-                                  border: Border(
-                                      bottom: BorderSide(
-                                          color: Color(0xffD7D7D7), width: ScreenUtil.getInstance().setWidth(1)))),
+                                  border:
+                                      Border(bottom: BorderSide(color: Color(0xffD7D7D7), width: ScreenUtil.getInstance().setWidth(1)))),
                               padding: EdgeInsets.only(
                                   left: ScreenUtil.getInstance().setWidth(20.0),
                                   top: ScreenUtil.getInstance().setWidth(20.0),
@@ -336,8 +327,7 @@ class _ContactsState extends State<Contacts> {
                                 onTap: () {
                                   Navigator.push(
                                     context,
-                                    new MaterialPageRoute(
-                                        builder: (context) => new MessageDetail({'name': '${child['name']}'})),
+                                    new MaterialPageRoute(builder: (context) => new MessageDetail({'name': '${child['name']}'})),
                                   );
                                 },
                                 child: Row(
