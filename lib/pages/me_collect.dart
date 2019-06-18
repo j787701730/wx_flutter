@@ -156,7 +156,6 @@ class _MeCollectState extends State<MeCollect> with WidgetsBindingObserver {
                     ),
                     decoration: BoxDecoration(
                         color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(10))),
-                    width: ScreenUtil.getInstance().setWidth(width),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -194,7 +193,6 @@ class _MeCollectState extends State<MeCollect> with WidgetsBindingObserver {
                   );
                 } else if (item['type'] == 'article') {
                   return Container(
-                    width: ScreenUtil.getInstance().setWidth(width),
                     margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(20)),
                     padding: EdgeInsets.only(
                       left: ScreenUtil.getInstance().setHeight(40),
@@ -271,7 +269,6 @@ class _MeCollectState extends State<MeCollect> with WidgetsBindingObserver {
                       });
                     },
                     child: Container(
-                      width: ScreenUtil.getInstance().setWidth(width),
                       margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(20)),
                       padding: EdgeInsets.only(
                         left: ScreenUtil.getInstance().setHeight(40),
