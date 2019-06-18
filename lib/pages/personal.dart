@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/cupertino.dart';
 import 'wallet.dart';
 import 'me_collect.dart';
+import 'me_moments.dart';
 
 class Personal extends StatefulWidget {
   @override
@@ -209,47 +210,55 @@ class _PersonalState extends State<Personal> {
                 ),
               ),
             ),
-            Container(
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border(
-                    top: BorderSide(
-                        color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)),
-                  )),
-              height: ScreenUtil.getInstance().setHeight(88.0),
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Row(
-                      children: <Widget>[
-                        Container(
-                          margin: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(30.0)),
-                          child: Image.asset(
-                            'images/icon_me_photo.png',
-                            width: ScreenUtil.getInstance().setWidth(48.0),
-                            height: ScreenUtil.getInstance().setHeight(48.0),
+            GestureDetector(
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border(
+                      top: BorderSide(
+                          color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)),
+                    )),
+                height: ScreenUtil.getInstance().setHeight(88.0),
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Row(
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(30.0)),
+                            child: Image.asset(
+                              'images/icon_me_photo.png',
+                              width: ScreenUtil.getInstance().setWidth(48.0),
+                              height: ScreenUtil.getInstance().setHeight(48.0),
+                            ),
                           ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(30.0)),
-                          child: Text(
-                            '相册',
-                            style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(30.0)),
-                          ),
-                        )
-                      ],
+                          Container(
+                            margin: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(30.0)),
+                            child: Text(
+                              '相册',
+                              style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(30.0)),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(right: ScreenUtil.getInstance().setWidth(20.0)),
-                    child: Icon(
-                      Icons.keyboard_arrow_right,
-                      color: Color(0xffC7C7CC),
-                      size: ScreenUtil.getInstance().setSp(52.0),
-                    ),
-                  )
-                ],
+                    Container(
+                      padding: EdgeInsets.only(right: ScreenUtil.getInstance().setWidth(20.0)),
+                      child: Icon(
+                        Icons.keyboard_arrow_right,
+                        color: Color(0xffC7C7CC),
+                        size: ScreenUtil.getInstance().setSp(52.0),
+                      ),
+                    )
+                  ],
+                ),
               ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  new MaterialPageRoute(builder: (context) => new MeMoments()),
+                );
+              },
             ),
             Container(
               decoration: BoxDecoration(
