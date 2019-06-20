@@ -78,9 +78,8 @@ class _BalanceState extends State<Balance> {
                 left: ScreenUtil.getInstance().setWidth(40.0),
                 right: ScreenUtil.getInstance().setWidth(40.0),
               ),
-              child: RaisedButton(
+              child: FlatButton(
                 onPressed: () {},
-                elevation: 1,
                 child: Text(
                   '充值',
                   style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(34.0)),
@@ -100,7 +99,7 @@ class _BalanceState extends State<Balance> {
                 left: ScreenUtil.getInstance().setWidth(40.0),
                 right: ScreenUtil.getInstance().setWidth(40.0),
               ),
-              child: RaisedButton(
+              child: FlatButton(
                 onPressed: () {},
                 child: Text(
                   '提现',

@@ -49,7 +49,7 @@ class _TabsState extends State<Tabs> with WidgetsBindingObserver {
                 left: ScreenUtil.getInstance().setWidth(40),
                 right: ScreenUtil.getInstance().setWidth(40),
               ),
-              child: RaisedButton(
+              child: FlatButton(
                 color: Color(0xff1AAD19),
                 padding: EdgeInsets.only(
                   top: ScreenUtil.getInstance().setHeight(26),
@@ -57,8 +57,8 @@ class _TabsState extends State<Tabs> with WidgetsBindingObserver {
                 ),
                 onPressed: () {
                   Navigator.push(
-                  context,
-                      new MaterialPageRoute(builder: (context) => new AddTab()),
+                    context,
+                    new MaterialPageRoute(builder: (context) => new AddTab()),
                   );
                 },
                 child: Text(
