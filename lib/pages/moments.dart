@@ -138,7 +138,6 @@ class _MomentsState extends State<Moments> with WidgetsBindingObserver {
     //获取元素大小
     Size size = renderObject.paintBounds.size;
     var vector3 = renderObject.getTransformTo(null)?.getTranslation();
-    print(vector3);
     //获取元素位置
 //      var vector3 = renderObject.getTransformTo(null)?.getTranslation();
 //      CommonUtils.showChooseDialog(context, size, vector3);
