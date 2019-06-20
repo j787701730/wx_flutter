@@ -90,7 +90,9 @@ class _CardsOffersState extends State<CardsOffers> with WidgetsBindingObserver {
                   );
                 }).toList(),
               ),
-              padding: EdgeInsets.only(bottom: ScreenUtil.getInstance().setHeight(20)),
+              padding: EdgeInsets.only(bottom: ScreenUtil.getInstance().setHeight(20),
+              left: ScreenUtil.getInstance().setHeight(20),
+              right: ScreenUtil.getInstance().setWidth(20)),
             ),
             Container(
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setWidth(30)),
