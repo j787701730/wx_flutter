@@ -230,26 +230,27 @@ class _MessageDetailState extends State<MessageDetail> {
                         borderRadius: BorderRadius.all(Radius.circular(6))),
                     child: isKeyBroad
                         ? TextField(
-                            focusNode: _contentFocusNode,
-                            controller: TextEditingController.fromValue(TextEditingValue(
-                                // 设置内容
-                                text: '$tabName',
-                                selection: TextSelection.fromPosition(TextPosition(
-                                    affinity: TextAffinity.downstream, offset: '$tabName'.length))
-                                // 保持光标在最后
-                                )),
-                            onChanged: (String str) {
-                              //输入监听
-                              setState(() {
-                                tabName = str;
-                              });
-                            },
-                            decoration: InputDecoration(
-                              hintText: '',
-                              border: OutlineInputBorder(borderSide: BorderSide.none),
-                            ),
-                            style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(26)),
-                          )
+                      focusNode: _contentFocusNode,
+                      controller: TextEditingController.fromValue(TextEditingValue(
+                        // 设置内容
+                          text: '$tabName',
+                          selection: TextSelection.fromPosition(TextPosition(
+                              affinity: TextAffinity.downstream, offset: '$tabName'.length))
+                        // 保持光标在最后
+                      )),
+                      onChanged: (String str) {
+                        //输入监听
+                        setState(() {
+                          tabName = str;
+                        });
+                      },
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide.none
+                        ),
+                      ),
+//                      style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(36)),
+                    )
                         : Container(
                             width: ScreenUtil.getInstance().setWidth(378.0),
                             height: ScreenUtil.getInstance().setHeight(72.0),
