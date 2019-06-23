@@ -156,7 +156,7 @@ class _SubscriptionAccountState extends State<SubscriptionAccount> with WidgetsB
                                 top: ScreenUtil.getInstance().setHeight(30), bottom: ScreenUtil.getInstance().setHeight(30)),
                             decoration: BoxDecoration(
                                 color: Colors.white,
-//                                border: Border(top: BorderSide(color: Color(0xffE6E6E6), width: ScreenUtil.getInstance().setWidth(1)))
+                                border: Border(bottom: BorderSide(color: Color(0xffE6E6E6), width: ScreenUtil.getInstance().setWidth(1)))
                                 ),
                             child: Row(children: <Widget>[
                               Expanded(
@@ -174,7 +174,59 @@ class _SubscriptionAccountState extends State<SubscriptionAccount> with WidgetsB
                                   height: ScreenUtil.getInstance().setWidth(84),
                                 ),
                               ),
+                            ])),
+                        Container(
+
+                            padding: EdgeInsets.only(
+                                top: ScreenUtil.getInstance().setHeight(30), bottom: ScreenUtil.getInstance().setHeight(30)),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                                border: Border(bottom: BorderSide(color: Color(0xffE6E6E6), width: ScreenUtil.getInstance().setWidth(1)))
+                            ),
+                            child: Row(children: <Widget>[
+                              Expanded(
+                                  child: Text(
+                                    '面向对象：有趣的灵魂二百多斤？不不不，90斤足矣',
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(30)),
+                                  )),
+                              Container(
+                                margin: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(20)),
+                                child: Image.asset(
+                                  'images/yu.jpg',
+                                  width: ScreenUtil.getInstance().setWidth(84),
+                                  height: ScreenUtil.getInstance().setWidth(84),
+                                ),
+                              ),
+                            ])),
+                        Container(
+
+                            padding: EdgeInsets.only(
+                                top: ScreenUtil.getInstance().setHeight(30), bottom: ScreenUtil.getInstance().setHeight(30)),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+//                                border: Border(top: BorderSide(color: Color(0xffE6E6E6), width: ScreenUtil.getInstance().setWidth(1)))
+                            ),
+                            child: Row(children: <Widget>[
+                              Expanded(
+                                  child: Text(
+                                    '面向对象：有趣的灵魂二百多斤？不不不，90斤足矣',
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(30)),
+                                  )),
+                              Container(
+                                margin: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(20)),
+                                child: Image.asset(
+                                  'images/yu.jpg',
+                                  width: ScreenUtil.getInstance().setWidth(84),
+                                  height: ScreenUtil.getInstance().setWidth(84),
+                                ),
+                              ),
                             ]))
+
+
                       ],
                     ),
                   )
