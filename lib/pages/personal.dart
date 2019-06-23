@@ -6,6 +6,7 @@ import 'me_collect.dart';
 import 'my_posts.dart';
 import 'cards_offers.dart';
 import 'sticker_gallery.dart';
+import 'my_profile.dart';
 
 class Personal extends StatefulWidget {
   @override
@@ -40,83 +41,86 @@ class _PersonalState extends State<Personal> {
         color: Color(0xffEFEFF5),
         child: ListView(
           children: <Widget>[
-            Container(
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border(
-                      bottom: BorderSide(
-                          color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)),
-                      top: BorderSide(
-                          color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)))),
-              margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(30.0)),
-              height: ScreenUtil.getInstance().setHeight(176.0),
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Row(
-                      children: <Widget>[
-                        Container(
-                            margin: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(30.0)),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.all(Radius.circular(6)),
-                              child: Image.asset(
-                                'images/yu.jpg',
-                                width: ScreenUtil.getInstance().setWidth(130.0),
-                                height: ScreenUtil.getInstance().setHeight(130.0),
-                              ),
-                            )),
-                        Container(
-                          margin: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(30.0)),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                '余余余余余',
-                                style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(30.0)),
-                              ),
-                              Container(
-                                margin:
-                                    EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(20.0)),
-                                child: Text(
-                                  '微信号: XXXXXX',
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(26.0)),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  new MaterialPageRoute(builder: (context) => new MyProfile()),
+                );
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border(
+                        bottom: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)),
+                        top: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)))),
+                margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(30.0)),
+                height: ScreenUtil.getInstance().setHeight(176.0),
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Row(
+                        children: <Widget>[
+                          Container(
+                              margin: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(30.0)),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.all(Radius.circular(6)),
+                                child: Image.asset(
+                                  'images/yu.jpg',
+                                  width: ScreenUtil.getInstance().setWidth(130.0),
+                                  height: ScreenUtil.getInstance().setHeight(130.0),
                                 ),
-                              )
-                            ],
-                          ),
-                        )
-                      ],
+                              )),
+                          Container(
+                            margin: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(30.0)),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Text(
+                                  '余余余余余',
+                                  style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(30.0)),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(20.0)),
+                                  child: Text(
+                                    '微信号: XXXXXX',
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(26.0)),
+                                  ),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                  Container(
-                    child: Image.asset(
-                      'images/code.png',
-                      width: ScreenUtil.getInstance().setWidth(36.0),
-                      height: ScreenUtil.getInstance().setHeight(36.0),
+                    Container(
+                      child: Image.asset(
+                        'images/code.png',
+                        width: ScreenUtil.getInstance().setWidth(36.0),
+                        height: ScreenUtil.getInstance().setHeight(36.0),
+                      ),
                     ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(right: ScreenUtil.getInstance().setWidth(20.0)),
-                    child: Icon(
-                      Icons.keyboard_arrow_right,
-                      color: Color(0xffC7C7CC),
-                      size: ScreenUtil.getInstance().setSp(52.0),
-                    ),
-                  )
-                ],
+                    Container(
+                      padding: EdgeInsets.only(right: ScreenUtil.getInstance().setWidth(20.0)),
+                      child: Icon(
+                        Icons.keyboard_arrow_right,
+                        color: Color(0xffC7C7CC),
+                        size: ScreenUtil.getInstance().setSp(52.0),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border(
-                      bottom: BorderSide(
-                          color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)),
-                      top: BorderSide(
-                          color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)))),
+                      bottom: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)),
+                      top: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)))),
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(40.0)),
               height: ScreenUtil.getInstance().setHeight(88.0),
               child: InkWell(
@@ -171,10 +175,7 @@ class _PersonalState extends State<Personal> {
               child: Container(
                 decoration: BoxDecoration(
                     color: Colors.white,
-                    border: Border(
-                        top: BorderSide(
-                            color: Color(0xffD8D8DA),
-                            width: ScreenUtil.getInstance().setWidth(1)))),
+                    border: Border(top: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)))),
                 margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(40.0)),
                 height: ScreenUtil.getInstance().setHeight(88.0),
                 child: Row(
@@ -217,8 +218,7 @@ class _PersonalState extends State<Personal> {
                 decoration: BoxDecoration(
                     color: Colors.white,
                     border: Border(
-                      top: BorderSide(
-                          color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)),
+                      top: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)),
                     )),
                 height: ScreenUtil.getInstance().setHeight(88.0),
                 child: Row(
@@ -272,10 +272,7 @@ class _PersonalState extends State<Personal> {
               child: Container(
                 decoration: BoxDecoration(
                     color: Colors.white,
-                    border: Border(
-                        top: BorderSide(
-                            color: Color(0xffD8D8DA),
-                            width: ScreenUtil.getInstance().setWidth(1)))),
+                    border: Border(top: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)))),
                 height: ScreenUtil.getInstance().setHeight(88.0),
                 child: Row(
                   children: <Widget>[
@@ -323,11 +320,8 @@ class _PersonalState extends State<Personal> {
                 decoration: BoxDecoration(
                     color: Colors.white,
                     border: Border(
-                        bottom: BorderSide(
-                            color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)),
-                        top: BorderSide(
-                            color: Color(0xffD8D8DA),
-                            width: ScreenUtil.getInstance().setWidth(1)))),
+                        bottom: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)),
+                        top: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)))),
                 height: ScreenUtil.getInstance().setHeight(88.0),
                 child: Row(
                   children: <Widget>[
@@ -368,10 +362,8 @@ class _PersonalState extends State<Personal> {
               decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border(
-                      bottom: BorderSide(
-                          color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)),
-                      top: BorderSide(
-                          color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)))),
+                      bottom: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)),
+                      top: BorderSide(color: Color(0xffD8D8DA), width: ScreenUtil.getInstance().setWidth(1)))),
               margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(40.0)),
               height: ScreenUtil.getInstance().setHeight(88.0),
               child: Row(
