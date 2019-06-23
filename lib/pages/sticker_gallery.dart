@@ -26,7 +26,7 @@ class _StickerGalleryState extends State<StickerGallery> with WidgetsBindingObse
     return Scaffold(
       appBar: AppBar(
         title: Container(
-          height: 40,
+          height: 30,
           margin: EdgeInsets.only(left: 30, right: 30),
           decoration: BoxDecoration(
               border: Border.all(color: Colors.white, width: ScreenUtil.getInstance().setWidth(2)),
@@ -46,7 +46,7 @@ class _StickerGalleryState extends State<StickerGallery> with WidgetsBindingObse
                     child: Center(
                       child: Text(
                         '朋友表情',
-                        style: TextStyle(color: index == 0 ? Colors.black : Colors.white),
+                        style: TextStyle(fontSize: 14, color: index == 0 ? Colors.black : Colors.white),
                       ),
                     ),
                     color: index == 0 ? Colors.white : Colors.transparent,
@@ -66,7 +66,7 @@ class _StickerGalleryState extends State<StickerGallery> with WidgetsBindingObse
                     child: Center(
                       child: Text(
                         '更多表情',
-                        style: TextStyle(color: index == 1 ? Colors.black : Colors.white),
+                        style: TextStyle(color: index == 1 ? Colors.black : Colors.white, fontSize: 14),
                       ),
                     ),
                     color: index == 1 ? Colors.white : Colors.transparent,
@@ -83,6 +83,7 @@ class _StickerGalleryState extends State<StickerGallery> with WidgetsBindingObse
         color: Color(0xffEFEFF4),
         child: Container(
           child: PageView(
+            physics: NeverScrollableScrollPhysics(), // 禁止滑动切换
             children: [0, 1].map<Widget>((item) {
               return Container(
                 child: StickerGalleryDetail(item),
@@ -158,10 +159,8 @@ class _StickerGalleryDetailState extends State<StickerGalleryDetail> {
           height: ScreenUtil.getInstance().setHeight(56.0),
           decoration: BoxDecoration(
               color: Colors.white,
-              border:
-                  Border.all(color: Color(0xffD9D9DB), width: ScreenUtil.getInstance().setWidth(1)),
-              borderRadius:
-                  BorderRadius.all(Radius.circular(ScreenUtil.getInstance().setWidth(6.0)))),
+              border: Border.all(color: Color(0xffD9D9DB), width: ScreenUtil.getInstance().setWidth(1)),
+              borderRadius: BorderRadius.all(Radius.circular(ScreenUtil.getInstance().setWidth(6.0)))),
           child: Stack(
             children: <Widget>[
               Container(
@@ -170,13 +169,10 @@ class _StickerGalleryDetailState extends State<StickerGalleryDetail> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      Icon(Icons.search,
-                          size: ScreenUtil.getInstance().setWidth(44.0), color: Color(0xffC5C5C5)),
+                      Icon(Icons.search, size: ScreenUtil.getInstance().setWidth(44.0), color: Color(0xffC5C5C5)),
                       Text(
                         '搜索表情',
-                        style: TextStyle(
-                            fontSize: ScreenUtil.getInstance().setSp(26.0),
-                            color: Color(0xffC5C5C5)),
+                        style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(26.0), color: Color(0xffC5C5C5)),
                       )
                     ],
                   ),
@@ -186,10 +182,7 @@ class _StickerGalleryDetailState extends State<StickerGalleryDetail> {
           ),
         ),
         Container(
-          decoration: BoxDecoration(
-              border: Border(
-                  top: BorderSide(
-                      color: Color(0xffD6D7DC), width: ScreenUtil.getInstance().setWidth(1)))),
+          decoration: BoxDecoration(border: Border(top: BorderSide(color: Color(0xffD6D7DC), width: ScreenUtil.getInstance().setWidth(1)))),
           child: Image.asset(stickers[widget.index]['banner'][0]),
         ),
         widget.index == 0
@@ -225,9 +218,7 @@ class _StickerGalleryDetailState extends State<StickerGalleryDetail> {
                         children: <Widget>[
                           Text(
                             '新品推荐',
-                            style: TextStyle(
-                                color: Color(0xff666666),
-                                fontSize: ScreenUtil.getInstance().setSp(24)),
+                            style: TextStyle(color: Color(0xff666666), fontSize: ScreenUtil.getInstance().setSp(24)),
                           ),
                           Icon(
                             Icons.chevron_right,
@@ -252,10 +243,7 @@ class _StickerGalleryDetailState extends State<StickerGalleryDetail> {
                         bottom: ScreenUtil.getInstance().setHeight(20),
                       ),
                       decoration: BoxDecoration(
-                          border: Border(
-                              top: BorderSide(
-                                  color: Color(0xffEBEBEB),
-                                  width: ScreenUtil.getInstance().setWidth(1)))),
+                          border: Border(top: BorderSide(color: Color(0xffEBEBEB), width: ScreenUtil.getInstance().setWidth(1)))),
                       child: Row(
                         children: <Widget>[
                           Container(
@@ -275,10 +263,11 @@ class _StickerGalleryDetailState extends State<StickerGalleryDetail> {
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(28)),
                                 ),
+                                Container(
+                                  height: ScreenUtil.getInstance().setHeight(10),
+                                ),
                                 Text('${item['num']}个朋友在用',
-                                    style: TextStyle(
-                                        fontSize: ScreenUtil.getInstance().setSp(24),
-                                        color: Color(0xff888888)))
+                                    style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(24), color: Color(0xff888888)))
                               ],
                             ),
                           )),
@@ -286,27 +275,28 @@ class _StickerGalleryDetailState extends State<StickerGalleryDetail> {
                             margin: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(40)),
                             width: ScreenUtil.getInstance().setWidth(120),
                             height: ScreenUtil.getInstance().setWidth(120),
+                            padding: EdgeInsets.only(
+                                right: ScreenUtil.getInstance().setWidth(20),
+                                top: ScreenUtil.getInstance().setHeight(35),
+                                bottom: ScreenUtil.getInstance().setHeight(35)),
                             child: Container(
-                              height: ScreenUtil.getInstance().setHeight(52),
                               child: Center(
                                 child: item['state'] == '0'
                                     ? OutlineButton(
+                                        padding: EdgeInsets.only(left: 0, right: 0, top: 0, bottom: 0),
                                         borderSide: new BorderSide(color: Color(0xff1AAD19)),
                                         onPressed: () {},
                                         child: Text(
                                           '下载',
-                                          style: TextStyle(
-                                              color: Color(0xff1AAD19),
-                                              fontSize: ScreenUtil.getInstance().setSp(24)),
+                                          style: TextStyle(color: Color(0xff1AAD19), fontSize: ScreenUtil.getInstance().setSp(24)),
                                         ),
                                       )
                                     : OutlineButton(
+                                        padding: EdgeInsets.only(left: 0, right: 0),
                                         borderSide: new BorderSide(color: Color(0xff888888)),
                                         child: Text(
                                           '已下载',
-                                          style: TextStyle(
-                                              color: Color(0xff888888),
-                                              fontSize: ScreenUtil.getInstance().setSp(24)),
+                                          style: TextStyle(color: Color(0xff888888), fontSize: ScreenUtil.getInstance().setSp(24)),
                                         ),
                                       ),
                               ),
@@ -339,9 +329,7 @@ class _StickerGalleryDetailState extends State<StickerGalleryDetail> {
                             margin: EdgeInsets.only(bottom: ScreenUtil.getInstance().setHeight(10)),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.all(Radius.circular(22)),
-                                border: Border.all(
-                                    color: Color(0xffCDCDCD),
-                                    width: ScreenUtil.getInstance().setWidth(1))),
+                                border: Border.all(color: Color(0xffCDCDCD), width: ScreenUtil.getInstance().setWidth(1))),
                             padding: EdgeInsets.all(20),
                             child: Center(
                               child: Image.asset(item['image']),

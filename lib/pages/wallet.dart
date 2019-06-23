@@ -20,29 +20,32 @@ class _WalletState extends State<Wallet> with WidgetsBindingObserver {
     {
       'type': '腾讯服务',
       'list': [
-        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
-        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
-        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
-        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
-        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
-        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
-        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
-        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
-        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
+        {'id': '', 'name': '信用卡还款', 'image': 'b1'},
+        {'id': '', 'name': '微粒贷借钱', 'image': 'b2'},
+        {'id': '', 'name': '手机充值', 'image': 'b3'},
+        {'id': '', 'name': '理财通', 'image': 'b4'},
+        {'id': '', 'name': '生活缴费', 'image': 'b5'},
+        {'id': '', 'name': 'Q币充值', 'image': 'b6'},
+        {'id': '', 'name': '城市服务', 'image': 'b7'},
+        {'id': '', 'name': '腾讯公益', 'image': 'b8'},
+        {'id': '', 'name': '保险服务', 'image': 'b9'},
       ]
     },
     {
       'type': '第三方服务',
       'list': [
-        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
-        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
-        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
-        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
-        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
-        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
-        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
-        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
-        {'id': '', 'name': '信用卡还款', 'icon': Icon(Icons.credit_card, size: ScreenUtil.getInstance().setSp(44.0), color: Color(0xff47A6DF))},
+        {'id': '', 'name': '火车票机票', 'image': 'b10'},
+        {'id': '', 'name': '滴滴出行', 'image': 'b11'},
+        {'id': '', 'name': '京东购物', 'image': 'b12'},
+        {'id': '', 'name': '美团外卖', 'image': 'b13'},
+        {'id': '', 'name': '电影演出赛事', 'image': 'b14'},
+        {'id': '', 'name': '吃喝玩乐', 'image': 'b15'},
+        {'id': '', 'name': '酒店', 'image': 'b16'},
+        {'id': '', 'name': '拼多多', 'image': 'b17'},
+        {'id': '', 'name': '蘑菇街女装', 'image': 'b18'},
+        {'id': '', 'name': '唯品会', 'image': 'b19'},
+        {'id': '', 'name': '转转二手', 'image': 'b20'},
+        {'id': '', 'name': '贝壳找房', 'image': 'b21'},
       ]
     }
   ];
@@ -233,8 +236,8 @@ class _WalletState extends State<Wallet> with WidgetsBindingObserver {
                           return Container(
                             width: width / 3,
                             padding: EdgeInsets.only(
-                              top: ScreenUtil.getInstance().setHeight(46.0),
-                              bottom: ScreenUtil.getInstance().setHeight(46.0),
+                              top: ScreenUtil.getInstance().setHeight(40.0),
+                              bottom: ScreenUtil.getInstance().setHeight(40.0),
                             ),
                             decoration: BoxDecoration(
                                 color: Colors.white,
@@ -246,11 +249,21 @@ class _WalletState extends State<Wallet> with WidgetsBindingObserver {
                                         : BorderSide(color: Colors.white, width: ScreenUtil.getInstance().setWidth(1)))),
                             child: Column(
                               children: <Widget>[
-                                list['icon'],
-                                Text(
-                                  list['name'],
-                                  style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(24.0)),
-                                )
+                                Image.asset(
+                                  'images/${list['image']}.png',
+                                  width: ScreenUtil.getInstance().setWidth(60),
+                                  height: ScreenUtil.getInstance().setHeight(60),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(
+                                    top: ScreenUtil.getInstance().setHeight(10)
+                                  ),
+                                  height: ScreenUtil.getInstance().setWidth(30),
+                                  child: Text(
+                                    list['name'],
+                                    style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(24.0)),
+                                  ),
+                                ),
                               ],
                             ),
                           );
