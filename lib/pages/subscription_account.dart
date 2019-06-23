@@ -11,6 +11,7 @@ class _SubscriptionAccountState extends State<SubscriptionAccount> with WidgetsB
   var width;
   var top;
   var currentPanelIndex = -1;
+  bool isOffstage = false;
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +93,9 @@ class _SubscriptionAccountState extends State<SubscriptionAccount> with WidgetsB
                     margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(30)),
                     padding: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(30), bottom: ScreenUtil.getInstance().setHeight(30)),
                     decoration: BoxDecoration(
-                        border: Border(top: BorderSide(color: Color(0xffE6E6E6), width: ScreenUtil.getInstance().setWidth(1)))),
+                        border: Border(
+                            top: BorderSide(color: Color(0xffE6E6E6), width: ScreenUtil.getInstance().setWidth(1)),
+                            bottom: BorderSide(color: Color(0xffE6E6E6), width: ScreenUtil.getInstance().setWidth(1)))),
                     child: Row(
                       children: <Widget>[
                         Expanded(
@@ -113,62 +116,124 @@ class _SubscriptionAccountState extends State<SubscriptionAccount> with WidgetsB
                       ],
                     ),
                   ),
-                  SingleChildScrollView(
-                    child: ExpansionPanelList(
-                      animationDuration: Duration(milliseconds: 500),
-                      expansionCallback: (panelIndex, isExpanded) {
+                  Offstage(
+                    offstage: isOffstage,
+                    child: GestureDetector(
+                      child: Container(
+                        padding: EdgeInsets.only(
+                          top: ScreenUtil.getInstance().setWidth(30),
+                          bottom: ScreenUtil.getInstance().setWidth(50),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Text(
+                              '余下3篇',
+                              style: TextStyle(color: Color(0xff576B95), fontSize: ScreenUtil.getInstance().setSp(28)),
+                            ),
+                            Icon(
+                              Icons.keyboard_arrow_down,
+                              size: 30,
+                              color: Color(0xffC7C7CC),
+                            )
+                          ],
+                        ),
+                      ),
+                      onTap: () {
                         setState(() {
-                          currentPanelIndex = (currentPanelIndex != panelIndex) ? panelIndex : -1;
+                          isOffstage = !isOffstage;
                         });
                       },
-                      children: <ExpansionPanel>[
-                        ExpansionPanel(
-                            headerBuilder: (context, isExpanded) {
-                              return Container(
-                                color: Colors.white,
-                                child: Row(
-                                children: <Widget>[
-                                  Text('余下3篇')
-                                ],
-                                ),
-                              );
-                            },
-                            body: ListBody(
-                              children: <Widget>[
-                                Container(
-                                  margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(30)),
-                                  padding: EdgeInsets.only(
-                                      top: ScreenUtil.getInstance().setHeight(30), bottom: ScreenUtil.getInstance().setHeight(30)),
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      border:
-                                          Border(top: BorderSide(color: Color(0xffE6E6E6), width: ScreenUtil.getInstance().setWidth(1)))),
-                                  child: Row(
-                                    children: <Widget>[
-                                      Expanded(
-                                          child: Text(
-                                        '面向对象：有趣的灵魂二百多斤？不不不，90斤足矣',
-                                        maxLines: 2,
-                                        overflow: TextOverflow.ellipsis,
-                                        style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(30)),
-                                      )),
-                                      Container(
-                                        margin: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(20)),
-                                        child: Image.asset(
-                                          'images/yu.jpg',
-                                          width: ScreenUtil.getInstance().setWidth(84),
-                                          height: ScreenUtil.getInstance().setWidth(84),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                            isExpanded: currentPanelIndex == 0)
-                      ],
                     ),
                   ),
+                  Offstage(
+                    offstage: !isOffstage,
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+
+                            padding: EdgeInsets.only(
+                                top: ScreenUtil.getInstance().setHeight(30), bottom: ScreenUtil.getInstance().setHeight(30)),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+//                                border: Border(top: BorderSide(color: Color(0xffE6E6E6), width: ScreenUtil.getInstance().setWidth(1)))
+                                ),
+                            child: Row(children: <Widget>[
+                              Expanded(
+                                  child: Text(
+                                '面向对象：有趣的灵魂二百多斤？不不不，90斤足矣',
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(30)),
+                              )),
+                              Container(
+                                margin: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(20)),
+                                child: Image.asset(
+                                  'images/yu.jpg',
+                                  width: ScreenUtil.getInstance().setWidth(84),
+                                  height: ScreenUtil.getInstance().setWidth(84),
+                                ),
+                              ),
+                            ]))
+                      ],
+                    ),
+                  )
+//                  SingleChildScrollView(
+//                    child: ExpansionPanelList(
+//                      animationDuration: Duration(milliseconds: 500),
+//                      expansionCallback: (panelIndex, isExpanded) {
+//                        setState(() {
+//                          currentPanelIndex = (currentPanelIndex != panelIndex) ? panelIndex : -1;
+//                        });
+//                      },
+//                      children: <ExpansionPanel>[
+//                        ExpansionPanel(
+//                            headerBuilder: (context, isExpanded) {
+//                              return Container(
+//                                color: Colors.white,
+//                                child: Row(
+//                                children: <Widget>[
+//                                  Text('余下3篇')
+//                                ],
+//                                ),
+//                              );
+//                            },
+//                            body: ListBody(
+//                              children: <Widget>[
+//                                Container(
+//                                  margin: EdgeInsets.only(top: ScreenUtil.getInstance().setHeight(30)),
+//                                  padding: EdgeInsets.only(
+//                                      top: ScreenUtil.getInstance().setHeight(30), bottom: ScreenUtil.getInstance().setHeight(30)),
+//                                  decoration: BoxDecoration(
+//                                      color: Colors.white,
+//                                      border:
+//                                          Border(top: BorderSide(color: Color(0xffE6E6E6), width: ScreenUtil.getInstance().setWidth(1)))),
+//                                  child: Row(
+//                                    children: <Widget>[
+//                                      Expanded(
+//                                          child: Text(
+//                                        '面向对象：有趣的灵魂二百多斤？不不不，90斤足矣',
+//                                        maxLines: 2,
+//                                        overflow: TextOverflow.ellipsis,
+//                                        style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(30)),
+//                                      )),
+//                                      Container(
+//                                        margin: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(20)),
+//                                        child: Image.asset(
+//                                          'images/yu.jpg',
+//                                          width: ScreenUtil.getInstance().setWidth(84),
+//                                          height: ScreenUtil.getInstance().setWidth(84),
+//                                        ),
+//                                      )
+//                                    ],
+//                                  ),
+//                                ),
+//                              ],
+//                            ),
+//                            isExpanded: currentPanelIndex == 0)
+//                      ],
+//                    ),
+//                  ),
                 ],
               ),
             ),

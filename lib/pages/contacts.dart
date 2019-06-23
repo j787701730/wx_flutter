@@ -6,6 +6,7 @@ import 'group_chat.dart';
 import 'add_contacts.dart';
 import 'tabs.dart';
 import 'subscriptions.dart';
+import 'company.dart';
 
 class Contacts extends StatefulWidget {
   @override
@@ -122,10 +123,8 @@ class _ContactsState extends State<Contacts> {
                   height: ScreenUtil.getInstance().setHeight(56.0),
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      border: Border.all(
-                          color: Color(0xffD9D9DB), width: ScreenUtil.getInstance().setWidth(1)),
-                      borderRadius: BorderRadius.all(
-                          Radius.circular(ScreenUtil.getInstance().setWidth(6.0)))),
+                      border: Border.all(color: Color(0xffD9D9DB), width: ScreenUtil.getInstance().setWidth(1)),
+                      borderRadius: BorderRadius.all(Radius.circular(ScreenUtil.getInstance().setWidth(6.0)))),
                   child: Stack(
                     children: <Widget>[
                       Container(
@@ -134,14 +133,10 @@ class _ContactsState extends State<Contacts> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
-                              Icon(Icons.search,
-                                  size: ScreenUtil.getInstance().setWidth(44.0),
-                                  color: Color(0xffC5C5C5)),
+                              Icon(Icons.search, size: ScreenUtil.getInstance().setWidth(44.0), color: Color(0xffC5C5C5)),
                               Text(
                                 '搜索',
-                                style: TextStyle(
-                                    fontSize: ScreenUtil.getInstance().setSp(26.0),
-                                    color: Color(0xffC5C5C5)),
+                                style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(26.0), color: Color(0xffC5C5C5)),
                               )
                             ],
                           ),
@@ -163,10 +158,7 @@ class _ContactsState extends State<Contacts> {
                     return Container(
                       decoration: BoxDecoration(
                           color: Colors.white,
-                          border: Border(
-                              bottom: BorderSide(
-                                  color: Color(0xffD7D7D7),
-                                  width: ScreenUtil.getInstance().setWidth(1)))),
+                          border: Border(bottom: BorderSide(color: Color(0xffD7D7D7), width: ScreenUtil.getInstance().setWidth(1)))),
                       padding: EdgeInsets.only(
                           left: ScreenUtil.getInstance().setWidth(20.0),
                           top: ScreenUtil.getInstance().setWidth(20.0),
@@ -201,8 +193,7 @@ class _ContactsState extends State<Contacts> {
                               height: ScreenUtil.getInstance().setHeight(72.0),
                             ),
                             Container(
-                              padding:
-                                  EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(20.0)),
+                              padding: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(20.0)),
                               child: Text(
                                 '${item['name']}',
                                 style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(30.0)),
@@ -221,33 +212,40 @@ class _ContactsState extends State<Contacts> {
                       bottom: ScreenUtil.getInstance().setWidth(8.0)),
                   child: Text(
                     '我的企业',
-                    style: TextStyle(
-                        fontSize: ScreenUtil.getInstance().setSp(26.0), color: Color(0xff8B8A90)),
+                    style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(26.0), color: Color(0xff8B8A90)),
                   ),
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                  ),
-                  padding: EdgeInsets.only(
-                      left: ScreenUtil.getInstance().setWidth(20.0),
-                      top: ScreenUtil.getInstance().setWidth(20.0),
-                      bottom: ScreenUtil.getInstance().setWidth(20.0)),
-                  child: Row(
-                    children: <Widget>[
-                      Image.asset(
-                        'images/yu.jpg',
-                        width: ScreenUtil.getInstance().setWidth(72.0),
-                        height: ScreenUtil.getInstance().setHeight(72.0),
-                      ),
-                      Container(
-                        padding: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(20.0)),
-                        child: Text(
-                          '福州有限公司',
-                          style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(30.0)),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      new MaterialPageRoute(builder: (context) => new Conpany('福州有限公司')),
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                    ),
+                    padding: EdgeInsets.only(
+                        left: ScreenUtil.getInstance().setWidth(20.0),
+                        top: ScreenUtil.getInstance().setWidth(20.0),
+                        bottom: ScreenUtil.getInstance().setWidth(20.0)),
+                    child: Row(
+                      children: <Widget>[
+                        Image.asset(
+                          'images/yu.jpg',
+                          width: ScreenUtil.getInstance().setWidth(72.0),
+                          height: ScreenUtil.getInstance().setHeight(72.0),
                         ),
-                      )
-                    ],
+                        Container(
+                          padding: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(20.0)),
+                          child: Text(
+                            '福州有限公司',
+                            style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(30.0)),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 Column(
@@ -265,9 +263,7 @@ class _ContactsState extends State<Contacts> {
                               bottom: ScreenUtil.getInstance().setWidth(8.0)),
                           child: Text(
                             '${item['type']}',
-                            style: TextStyle(
-                                fontSize: ScreenUtil.getInstance().setSp(26.0),
-                                color: Color(0xff8B8A90)),
+                            style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(26.0), color: Color(0xff8B8A90)),
                           ),
                         ),
                         Column(
@@ -275,10 +271,8 @@ class _ContactsState extends State<Contacts> {
                             return Container(
                               decoration: BoxDecoration(
                                   color: Colors.white,
-                                  border: Border(
-                                      bottom: BorderSide(
-                                          color: Color(0xffD7D7D7),
-                                          width: ScreenUtil.getInstance().setWidth(1)))),
+                                  border:
+                                      Border(bottom: BorderSide(color: Color(0xffD7D7D7), width: ScreenUtil.getInstance().setWidth(1)))),
                               padding: EdgeInsets.only(
                                   left: ScreenUtil.getInstance().setWidth(20.0),
                                   top: ScreenUtil.getInstance().setWidth(20.0),
@@ -287,9 +281,7 @@ class _ContactsState extends State<Contacts> {
                                 onTap: () {
                                   Navigator.push(
                                     context,
-                                    new MaterialPageRoute(
-                                        builder: (context) =>
-                                            new MessageDetail({'name': '${child['name']}'})),
+                                    new MaterialPageRoute(builder: (context) => new MessageDetail({'name': '${child['name']}'})),
                                   );
                                 },
                                 child: Row(
@@ -300,12 +292,10 @@ class _ContactsState extends State<Contacts> {
                                       height: ScreenUtil.getInstance().setHeight(72.0),
                                     ),
                                     Container(
-                                      padding: EdgeInsets.only(
-                                          left: ScreenUtil.getInstance().setWidth(20.0)),
+                                      padding: EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(20.0)),
                                       child: Text(
                                         '${child['name']}',
-                                        style: TextStyle(
-                                            fontSize: ScreenUtil.getInstance().setSp(30.0)),
+                                        style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(30.0)),
                                       ),
                                     )
                                   ],
